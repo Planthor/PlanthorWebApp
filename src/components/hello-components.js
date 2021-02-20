@@ -1,13 +1,12 @@
 import Component from "react";
-var hoang = "123";
-
+let namc = "123l";
 class helloComponents extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    return <h1>Hello</h1>;
+    return <h1>Hello {namc}</h1>;
   }
 }
 
