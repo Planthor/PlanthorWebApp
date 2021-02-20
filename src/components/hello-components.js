@@ -1,5 +1,5 @@
 import Component from "react";
-let namc = "123l";
+let namc1 = "123l";
 class helloComponents extends Component {
   constructor(props) {
     super(props);
