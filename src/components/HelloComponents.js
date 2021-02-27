@@ -3,7 +3,7 @@ import { Component } from 'react'
 class HelloComponent extends Component {
   state = {
     name: 'Planthor',
-    year: '2021',
+    year: '2021'
   }
   render() {
     return (
