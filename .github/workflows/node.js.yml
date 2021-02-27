@@ -21,7 +21,6 @@ jobs:
         with:
           fetch-depth: 1
       - name: Run ESLint
-        uses: ninosaurus/eslint-check@v5
         run: echo 'testing...'
   build:
     runs-on: ubuntu-latest
