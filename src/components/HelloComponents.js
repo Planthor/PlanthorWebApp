@@ -9,7 +9,6 @@ class HelloComponent extends Component {
     return (
       <div>
         <span class="green"> {this.state.name} Project </span>
-        <data></ta>
       </div>
     )
   }

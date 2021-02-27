@@ -21,6 +21,10 @@ jobs:
         with:
           fetch-depth: 1
       - name: Run ESLint
+        uses: dunklesToast/eslint-action@v1
+        with:
+          eslintBinary: 'custom/path/to/eslint'
+          eslintFolder: 'src'
         run: echo 'testing...'
   build:
     runs-on: ubuntu-latest
