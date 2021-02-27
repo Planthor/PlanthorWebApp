@@ -26,6 +26,7 @@ jobs:
           eslintBinary: 'custom/path/to/eslint'
           eslintFolder: 'src'
         run: echo 'testing...'
+
   build:
     runs-on: ubuntu-latest
 
