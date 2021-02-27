@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import HelloComponent from './components/HelloComponents'
 
 function App() {
   return (
@@ -15,11 +16,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello world
         </a>
+        <HelloComponent></HelloComponent>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
