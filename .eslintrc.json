@@ -13,8 +13,8 @@
             "error",
             {
               "printWidth": 80,
-              "trailingComma": "none",
-              "semi": false,
+              "trailingComma": "all",
+              "semi": true,
               "singleQuote": true,
               "no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
             }

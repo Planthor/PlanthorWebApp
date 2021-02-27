@@ -1,6 +1,6 @@
-import logo from './logo.svg'
-import './App.css'
-import HelloComponent from './components/HelloComponents'
+import logo from './logo.svg';
+import './App.css';
+import HelloComponent from './components/HelloComponents';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <HelloComponent></HelloComponent>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
