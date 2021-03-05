@@ -5,23 +5,35 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
+  # codacy-coverage-reporter:
+  #   runs-on: ubuntu-latest
+  #   name: codacy-coverage-reporter
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: Run Codacy Analysis CLI
+  #       uses: codacy/codacy-analysis-cli-action@master
+  #       with:
+  #         tool: <CLIENT_SIDE_TOOL_NAME>
+  #         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  #         upload: true
+  #         max-allowed-issues: 2147483647
 
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 12.x]
+        node-version: [12.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
