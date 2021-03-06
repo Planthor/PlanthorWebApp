@@ -70,3 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `npm run lint` to fix lint syntax
+this sectionn has moved here [https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW](https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW)
