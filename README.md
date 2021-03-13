@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a655e7db28404a8eb5e69b14b7205e2b)](https://www.codacy.com/gh/shopOnlineV4/Planthor_ClientFrontEndWebApp/dashboard?utm_source=github.com&utm_medium=referral&utm_content=shopOnlineV4/Planthor_ClientFrontEndWebApp&utm_campaign=Badge_Grade)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `npm run lint` to fix lint syntax
+this sectionn has moved here [https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW](https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW)
