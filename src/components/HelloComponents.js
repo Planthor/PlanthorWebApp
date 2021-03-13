@@ -1,6 +1,5 @@
 import { Component } from 'react';
 
-let a = 10;
 class HelloComponent extends Component {
   state = {
     name: 'Planthor',
