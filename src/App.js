@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
-import HelloComponent from './components/HelloComponents';
+import './App.scss';
+import { HelloComponent } from './components/HelloComponents';
 
 function App() {
   return (
