@@ -8,7 +8,7 @@ class HelloComponent extends Component {
   render() {
     return (
       <div>
-        <span className="green">{this.state.name} Project. </span>
+        <span className="green">{this.state.name} Project.. </span>
       </div>
     );
   }
