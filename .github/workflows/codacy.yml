@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     name: codacy-coverage-reporter
     steps:
-      - uses: actions/checkout@${GITHUB_REF##*/}
+      - uses: actions/checkout@${{GITHUB_REF##*/}}
       - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@${GITHUB_REF##*/}
+        uses: codacy/codacy-coverage-reporter-action@${{GITHUB_REF##*/}}
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
