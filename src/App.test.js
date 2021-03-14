@@ -7,3 +7,7 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/Hello world/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('two plus two is five', () => {
+  expect(2 + 2).toBe(5);
+});
