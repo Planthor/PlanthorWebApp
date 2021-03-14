@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import HelloComponent from './components/HelloComponents';
+import React from 'react';
 
 function App() {
   return (
