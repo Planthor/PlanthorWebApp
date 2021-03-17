@@ -17,5 +17,7 @@
         "react"
     ],
     "rules": {
+        "complexity": ["error", 22],
+        "camelcase": "error"
     }
 }
