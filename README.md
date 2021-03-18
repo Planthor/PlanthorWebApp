@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd04c7997be448a1819de86344b95873)](https://app.codacy.com/gh/Planthor-Team/Planthor_ClientFrontEndWebApp?utm_source=github.com&utm_medium=referral&utm_content=Planthor-Team/Planthor_ClientFrontEndWebApp&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a655e7db28404a8eb5e69b14b7205e2b)](https://www.codacy.com/gh/shopOnlineV4/Planthor_ClientFrontEndWebApp/dashboard?utm_source=github.com&utm_medium=referral&utm_content=shopOnlineV4/Planthor_ClientFrontEndWebApp&utm_campaign=Badge_Grade)
 [![Node.js CI](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/actions/workflows/node.js.yml/badge.svg)](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/actions/workflows/node.js.yml)
 # Getting Started with Create React App
