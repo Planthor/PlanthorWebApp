@@ -1,0 +1,6 @@
+build/*
+webpack/*
+webpack.config.js
+gulpfile.js
+molisart/src/localization/lang/*
+molisart/src/assets/*
