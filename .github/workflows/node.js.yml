@@ -33,11 +33,11 @@ jobs:
         run: echo '===test==='
       - name: Use Node.js ${{ matrix.node-version }}
       - uses: actions/setup-node@v1
-      - uses: codacy/codacy-coverage-reporter-action@maste
-      - run: npm ci
-      - run: npm test
-      - run: ls
+      - uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/clover.xml
           node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
+      - run: ls
