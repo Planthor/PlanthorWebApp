@@ -29,11 +29,11 @@ jobs:
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@main
-      - name: Run codacy-coverage-reporter
       - name: test command
         run: echo '===test==='
       - name: Set selected color
         run: ls
+      - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
