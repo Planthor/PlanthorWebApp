@@ -29,22 +29,15 @@ jobs:
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@main
-
       - name: test command
         run: echo '===test==='
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-node@v1
+      - uses: codacy/codacy-coverage-reporter-action@maste
       - run: npm ci
       - run: npm test
-
-      - name: Set selected color
-        run: ls
-
-      - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@master
+      - run: ls
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: clover.xml
+          coverage-reports: coverage/clover.xml
+          node-version: ${{ matrix.node-version }}
