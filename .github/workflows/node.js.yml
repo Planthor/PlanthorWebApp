@@ -30,13 +30,9 @@ jobs:
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@main
-        name: Run codacy report
 
       - name: test command
         run: echo '===test==='
-
-      - name: Set selected color
-        run: ls
 
       - name: run npm
         with:
