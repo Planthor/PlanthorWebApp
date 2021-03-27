@@ -4,12 +4,11 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [main, develop]
   pull_request:
     branches: [main]
 
 jobs:
+  ## job build and test
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -25,8 +24,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
 
+  ## this job gennerate report and push to codacy platform
   codacy-coverage-reporter:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@v2
