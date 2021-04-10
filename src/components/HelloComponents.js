@@ -9,7 +9,11 @@ class HelloComponent extends Component {
   render() {
     return (
       <div>
-        <span className="green">{this.state.name} Project.. </span>
+        <span className="green">Project...</span>
+        <i className="fi fi-rr-user"></i>
+        <i className="fi fi-rr-arrow-right"></i>
+        <i className="fi fi-rr-book"></i>
+        <i className="fi fi-rr-clean"></i>
       </div>
     );
   }
