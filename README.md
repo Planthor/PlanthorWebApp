@@ -73,3 +73,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `npm run lint` to fix lint syntax
 this sectionn has moved here [https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW](https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW)
+
+
+# Planthor_ClientBackEndWebApp
+
+Inspired by our learning group - Let Den Giac Mo.
+
+Thanks to all [contributors](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/graphs/contributors), you're awesome and this project could not be possible without you! The goal is to build a web-application for goal-progress tracking:
+- [Trung Pham](https://github.com/zovippro1996)
+- [Quang Le](https://github.com/quanglegl1404)
+
+To be updated...
+
+## Technical stack (BE)
+
+To be updated
+
+```
+```
+
+## Project setup
+
+### Prerequiste
+
+To be updated
+
+### Package restore
+
+To be updated
+
+### How to run
+
+- Open the solution in Visual Studio Code
+- Execute ```dotnet run``` 
+- Access to the adress provided in the command line
