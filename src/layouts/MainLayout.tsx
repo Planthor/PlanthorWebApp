@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import NavigationBar from "../components/NavigationBar/NavigationBar";
 
 type Props = {
     children: ReactNode;
@@ -7,12 +8,11 @@ type Props = {
 export default function MainLayout({ children }: Props) {
     return (
         <div>
-            <nav>Nav Bar</nav>
+            <NavigationBar />
             <main>
-                <header>Header</header>
                 <div>{children}</div>
-                <footer>Fotter</footer>
             </main>
+            <footer>Footer</footer>
         </div>
     );
 }
