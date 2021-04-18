@@ -9,7 +9,7 @@
         "plugin:react/recommended",
         "react-app",
         "prettier",
-		"plugin:jest-dom/recommended"
+        "plugin:jest-dom/recommended"
     ],
     "ignorePatterns": ["build/*"],
     "parser": "babel-eslint",
