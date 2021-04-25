@@ -1,5 +1,5 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/eb2a7eff9ff84e09a69a90351e79cdeb)](https://www.codacy.com/gh/Planthor-Team/Planthor_ClientFrontEndWebApp/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Planthor-Team/Planthor_ClientFrontEndWebApp&amp;utm_campaign=Badge_Grade)
-[![Node.js CI](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/actions/workflows/node.js.yml/badge.svg)](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/actions/workflows/node.js.yml)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
