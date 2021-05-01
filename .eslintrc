@@ -30,7 +30,7 @@
                 "arrowParens": "avoid",
                 "semi": true,
                 "trailingComma": "none",
-                "endOfLine": "lf",
+                "endOfLine": "auto",
                 "tabWidth": 4,
                 "printWidth": 80,
                 "useTabs": false

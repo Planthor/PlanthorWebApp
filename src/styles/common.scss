@@ -1,17 +1,15 @@
+@import "./font-planthor.scss";
+
 body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 
     a {
         text-decoration: none;
         &:hover {
             text-decoration: none;
         }
-    }
-    p {
-        font-family: $SamsungOne;
-        color: $black-100;
-        margin: revert;
     }
     img {
         width: 100%;
@@ -23,6 +21,7 @@ body {
     h5,
     h6 {
         margin: 0;
+        font-family: $planthor-font;
     }
     ul,
     ol {
@@ -33,3 +32,5 @@ body {
         }
     }
 }
+
+
