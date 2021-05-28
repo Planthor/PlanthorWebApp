@@ -1,18 +1,63 @@
 version: 2.1
 orbs:
   node: circleci/node@4.3.0
+  github-pages-orb: fernfernfern/github-pages-orb@0.0.10
 jobs:
-  test:
+  build:
     executor:
       name: node/default
-      tag: '13.14'
+      tag: "13.14"
     steps:
       - checkout
       - node/install-packages
       - run:
+          name: test & build
           command: npm run test && npm run build
-          
+      - run:
+          name: check folder
+          command: ls
+      - run: mkdir -p workspace
+      - run: cp -r ./build ./workspace && cp -f ./deploy-githubpage.sh ./workspace && cd workspace && ls
+        # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: workspace
+          # Must be relative path from root
+          paths:
+            - build/*
+  deploy:
+    # machine:
+    #   image: ubuntu-1604:202007-01
+    #   docker_layer_caching: true
+    executor:
+      name: node/default
+      tag: "13.14"
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /tmp/workspace
+      - run:
+          name: deploy to githubpage
+          command: |
+            cd /tmp/workspace/build &&
+            ls &&
+            git config --global user.email "giangbaccai1207@gmail.com" &&
+            git config --global user.name "akakshuki" &&
+            git init &&
+            git add . &&
+            git commit -m "update github frontend" &&
+            git branch -M main &&
+            git remote add origin https://${github_username}:${github_password}@github.com/Planthor-Team/planthor-team.github.io.git &&
+            git push -u -f origin main
+
 workflows:
   test_my_app:
     jobs:
-      - test
+      - build
+      - deploy:
+          branches:
+            only:
+              - master
+          requires:
+            - build
