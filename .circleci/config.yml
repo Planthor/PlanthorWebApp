@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@4.3.0
-  github-pages-orb: fernfernfern/github-pages-orb@0.0.10
 jobs:
   build:
     executor:
