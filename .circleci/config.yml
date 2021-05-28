@@ -55,8 +55,9 @@ workflows:
     jobs:
       - build
       - deploy:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - main
           requires:
             - build
