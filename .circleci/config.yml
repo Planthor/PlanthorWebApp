@@ -45,7 +45,7 @@ jobs:
             git config --global user.name "${PLANTHOR_FRONTEND_CI_USERNAME}" &&
             git init &&
             git add . &&
-            git commit -m "update github frontend with ${CIRCLE_PREVIOUS_BUILD_NUM}" &&
+            git commit -m "update github frontend #${CIRCLE_PREVIOUS_BUILD_NUM}" &&
             git branch -M main &&
             git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/planthor-team.github.io.git &&
             git push -u -f origin main
