@@ -40,14 +40,14 @@ jobs:
           name: deploy to githubpage
           command: |
             cd /tmp/workspace/build &&
-            ls &&
-            git config --global user.email "giangbaccai1207@gmail.com" &&
-            git config --global user.name "akakshuki" &&
+            ls && 
+            git config --global user.email "${PLANTHOR_FRONTEND_CI_EMAIL}" &&
+            git config --global user.name "${PLANTHOR_FRONTEND_CI_USERNAME}" &&
             git init &&
             git add . &&
-            git commit -m "update github frontend" &&
+            git commit -m "update github frontend with ${CIRCLE_PREVIOUS_BUILD_NUM}" &&
             git branch -M main &&
-            git remote add origin https://${github_username}:${github_password}@github.com/Planthor-Team/planthor-team.github.io.git &&
+            git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/planthor-team.github.io.git &&
             git push -u -f origin main
 
 workflows:
@@ -59,5 +59,6 @@ workflows:
             branches:
               only:
                 - main
+                - circle-ci-deploy
           requires:
             - build
