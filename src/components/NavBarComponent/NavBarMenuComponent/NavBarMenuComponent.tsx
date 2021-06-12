@@ -1,7 +1,7 @@
 import React from "react";
 
 function NavBarMenuComponent() {
-    return <div>Navigation Menu</div>;
+    return <nav>Navigation Menu</nav>;
 }
 
 export default NavBarMenuComponent;

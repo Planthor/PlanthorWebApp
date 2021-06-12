@@ -1,5 +1,10 @@
 import React from "react";
 
 export default function LandingPage() {
-    return <div>This is the Landing Page</div>;
+    return (
+        <div>
+            <h1>This is the Landing Page</h1>
+            <div>Welcome to Planthor</div>
+        </div>
+    );
 }

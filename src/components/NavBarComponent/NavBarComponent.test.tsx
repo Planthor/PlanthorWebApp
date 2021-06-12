@@ -4,6 +4,6 @@ import React from "react";
 
 test("renders Navigation Bar Component", () => {
     render(<NavBarComponent />);
-    const element = screen.getByText("Navigation Bar Component");
+    const element = screen.getByText("Nav Bar Component");
     expect(element).toBeInTheDocument();
 });
