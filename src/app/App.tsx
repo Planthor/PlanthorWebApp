@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import FooterComponent from "../components/FooterComponent/FooterComponent";
 import NavBarComponent from "../components/NavBarComponent/NavBarComponent";
 import ActivityPage from "../pages/ActivityPage/ActivityPage";
@@ -9,7 +9,8 @@ import ProfileManagementPage from "../pages/ProfileManagementPage/ProfileManagem
 
 function App() {
     return (
-        <BrowserRouter>
+        // HashRouter for solving Github Page problem unable to forward routing. Can consider change back to BrowserRouter when we host in our own webservice.
+        <HashRouter>
             <NavBarComponent />
             <Routes basename={process.env.PUBLIC_URL}>
                 <Route path="" element={<LandingPage />}></Route>
@@ -21,7 +22,7 @@ function App() {
                 <Route path="newgoal" element={<CreateNewGoalPage />}></Route>
             </Routes>
             <FooterComponent />
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
