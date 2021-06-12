@@ -1,76 +1,77 @@
 {
-  "name": "planthor",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^13.1.3",
-    "@types/axios": "^0.14.0",
-    "@types/query-string": "^6.3.0",
-    "@types/react-redux": "^7.1.16",
-    "@types/react-router": "^5.1.13",
-    "@types/react-router-dom": "^5.1.7",
-    "@types/redux": "^3.6.31",
-    "axios": "^0.21.1",
-    "node-sass": "^5.0.0",
-    "query-string": "^7.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.3",
-    "react-router": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "redux": "^4.0.5",
-    "typescript": "^4.2.4",
-    "web-vitals": "^1.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint-check": "eslint .",
-    "build:analyze": "webpack --mode production --env analyze",
-    "lint": "eslint --ext js,jsx,ts,tsx src/",
-    "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
-    "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest-dom": "^3.8.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-testing-library": "^4.0.2",
-    "history": "^5.0.0",
-    "prettier": "^2.2.1",
-    "react-router-dom": "^6.0.0-beta.0"
-  },
-  "jest": {}
+    "name": "planthor",
+    "homepage": "https://planthor-team.github.io/",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.11.10",
+        "@testing-library/react": "^11.2.6",
+        "@testing-library/user-event": "^13.1.3",
+        "@types/axios": "^0.14.0",
+        "@types/query-string": "^6.3.0",
+        "@types/react-redux": "^7.1.16",
+        "@types/react-router": "^5.1.13",
+        "@types/react-router-dom": "^5.1.7",
+        "@types/redux": "^3.6.31",
+        "axios": "^0.21.1",
+        "node-sass": "^5.0.0",
+        "query-string": "^7.0.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-redux": "^7.2.3",
+        "react-router": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "redux": "^4.0.5",
+        "typescript": "^4.2.4",
+        "web-vitals": "^1.1.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "lint-check": "eslint .",
+        "build:analyze": "webpack --mode production --env analyze",
+        "lint": "eslint --ext js,jsx,ts,tsx src/",
+        "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
+        "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
+        "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\""
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.3",
+        "eslint": "^7.24.0",
+        "eslint-config-prettier": "^8.2.0",
+        "eslint-config-standard": "^16.0.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest-dom": "^3.8.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-react": "^7.23.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-testing-library": "^4.0.2",
+        "history": "^5.0.0",
+        "prettier": "^2.2.1",
+        "react-router-dom": "^6.0.0-beta.0"
+    },
+    "jest": {}
 }
