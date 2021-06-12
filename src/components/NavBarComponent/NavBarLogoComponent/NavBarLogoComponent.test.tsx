@@ -1,10 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import NavBarLogoComponent from "./NavBarLogoComponent";
 import React from "react";
 
-test("renders App Component", async () => {
-    // Currently we have error on test in pipeline "Module history not found ...."
-    render(<App />);
+test("renders Nav Bar Register Component", () => {
+    render(<NavBarLogoComponent />);
     const element = screen.getByText("Planthor LOGO");
     expect(element).toBeInTheDocument();
 });
