@@ -11,7 +11,7 @@ function App() {
     return (
         <BrowserRouter>
             <NavBarComponent />
-            <Routes>
+            <Routes basename={process.env.PUBLIC_URL}>
                 <Route path="" element={<LandingPage />}></Route>
                 <Route path="activity" element={<ActivityPage />}></Route>
                 <Route
