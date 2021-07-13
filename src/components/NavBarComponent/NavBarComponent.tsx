@@ -2,18 +2,18 @@ import React from "react";
 import NavBarLogoComponent from "./NavBarLogoComponent/NavBarLogoComponent";
 import NavBarMenuComponent from "./NavBarMenuComponent/NavBarMenuComponent";
 import NavBarProfileComponent from "./NavBarProfileComponent/NavBarProfileComponent";
-import NavBarRegisterComponent from "./NavBarRegisterComponent/NavBarRegisterComponent";
+import "./NavBarComponent.scss";
 
-function NavBarComponent() {
+const NavBarComponent = () => {
     return (
-        <div>
-            <h2>Nav Bar Component</h2>
-            <NavBarLogoComponent />
-            <NavBarMenuComponent />
-            <NavBarRegisterComponent />
-            <NavBarProfileComponent />
+        <div className="bg-navigationbar">
+            <div className="container">
+                <NavBarLogoComponent />
+                <NavBarMenuComponent />
+                <NavBarProfileComponent />
+            </div>
         </div>
     );
-}
+};
 
 export default NavBarComponent;

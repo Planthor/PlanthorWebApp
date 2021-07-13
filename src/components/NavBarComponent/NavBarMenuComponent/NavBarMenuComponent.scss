@@ -1,0 +1,23 @@
+@import"../../../styles/fonts.scss";
+
+.list-menu {
+  position: absolute;
+  display: inline-flex;
+  box-sizing: border-box;
+  left: 235px;
+
+  ul {
+    display: flex;
+    text-decoration: none;
+
+    li {
+      display: flex;
+
+      .nav-link {
+        color: #000;
+        @include Montserrat-Semibold;
+        padding: 1em 1em;
+      }
+    }
+  }
+}
