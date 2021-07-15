@@ -1,9 +1,14 @@
 .logo-planthor {
-  width: 15%;
-  align-items: center;
+  display: block;
+  float: left;
+
   &__link {
+    display: block;
+    float: left;
+
     img {
-      width: 100%;
+      display: block;
+      width:140px;
     }
   }
 }

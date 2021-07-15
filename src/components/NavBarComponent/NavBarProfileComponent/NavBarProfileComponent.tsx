@@ -3,7 +3,7 @@ import "./NavBarProfileComponent.scss";
 
 const DUMMY_BUTTON = [
     { id: "btn-1", title: "Sign In", cName: "btn-sign-in" },
-    { id: "btn-2", title: "Sign In", cName: "btn-sign-up" }
+    { id: "btn-2", title: "Sign Up", cName: "btn-sign-up" }
 ];
 
 function NavBarProfileComponent() {

@@ -1,10 +1,13 @@
 import React from "react";
+import Wrapper from "../Ui/Wrapper";
+import "./Footer.scss";
 
 function FooterComponent() {
     return (
-        <div>
-            <h2>Footer</h2>
-            <div>Copyright Trademark</div>
+        <div className="footer">
+            <Wrapper className="">
+                <p className="footer__writter">© 2021 Planthor.</p>
+            </Wrapper>
         </div>
     );
 }
