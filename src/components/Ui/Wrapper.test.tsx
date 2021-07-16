@@ -1,6 +1,6 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import Wrapper from "./Wrapper";
-import React from "react";
 
 test("renders Wrapper Component", () => {
     render(<Wrapper />);
