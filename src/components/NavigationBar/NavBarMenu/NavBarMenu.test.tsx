@@ -4,6 +4,6 @@ import NavBarMenu from "./NavBarMenu";
 
 test("renders Nav Bar Register Component", () => {
     render(<NavBarMenu />);
-    const element = screen.getByTestId("custom-element");
-    expect(element).toBeInTheDocument();
+    const element = screen.getByTestId("navbar-menu");
+    expect(element).toBeEnabled();
 });

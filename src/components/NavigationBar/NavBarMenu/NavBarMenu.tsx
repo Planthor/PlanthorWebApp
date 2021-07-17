@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./NavBarMenu.scss";
 
 const MENU_LIST = [
@@ -10,14 +9,14 @@ const MENU_LIST = [
 
 const NavBarMenu = () => {
     return (
-        <nav className="list-menu" data-testid="custom-element">
+        <nav className="list-menu" data-testid="navbar-menu">
             <ul>
                 {MENU_LIST.map(item => {
                     return (
                         <li key={item.id}>
-                            <Link className={item.cName} to={item.url}>
+                            <a className={item.cName} href={item.url}>
                                 {item.title}
-                            </Link>
+                            </a>
                         </li>
                     );
                 })}
