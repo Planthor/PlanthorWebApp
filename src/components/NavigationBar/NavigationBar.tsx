@@ -8,7 +8,7 @@ import "./NavigationBar.scss";
 const NavigationBar = () => {
     return (
         <div className="bg-navigationbar" data-testid="custom-element">
-            <Wrapper className="">
+            <Wrapper>
                 <NavBarLogo />
                 <NavBarMenu />
                 <NavBarButton />

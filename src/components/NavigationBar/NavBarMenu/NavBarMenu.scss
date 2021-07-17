@@ -1,5 +1,3 @@
-@import"../../../styles/fonts.scss";
-
 .list-menu {
   position: absolute;
   box-sizing: border-box;
@@ -13,7 +11,7 @@
 
       .nav-link {
         color: #000;
-        @include Montserrat-Semibold;
+        font-weight: 600;
         padding: 1em 1em;
       }
     }

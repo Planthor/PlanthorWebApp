@@ -1,12 +1,13 @@
 @import "fonts.scss";
 
 body {
+  font-family: 'Montserrat', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 
   a {
-    @include Montserrat-Semibold;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 
     &:hover {
@@ -24,6 +25,7 @@ body {
   h4,
   h5,
   h6 {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
   }
 

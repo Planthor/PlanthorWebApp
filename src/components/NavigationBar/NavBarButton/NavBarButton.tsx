@@ -1,23 +1,14 @@
 import React from "react";
 import "./NavBarButton.scss";
+import ButtonCustom from "../../ButtonCustom/ButtonCustom";
 
-const DUMMY_BUTTON = [
-    { id: "btn-1", title: "Sign In", cName: "btn-sign-in" },
-    { id: "btn-2", title: "Sign Up", cName: "btn-sign-up" }
-];
-
-function NavBarButton() {
+const NavBarButton = () => {
     return (
         <div className="profile-btn">
-            {DUMMY_BUTTON.map(item => {
-                return (
-                    <button className={item.cName} key={item.id}>
-                        {item.title}
-                    </button>
-                );
-            })}
+            <ButtonCustom className="btn-sign-in">Sign In</ButtonCustom>
+            <ButtonCustom className="btn-sign-up">Sign Up</ButtonCustom>
         </div>
     );
-}
+};
 
 export default NavBarButton;

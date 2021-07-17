@@ -1,0 +1,40 @@
+@import "fonts.scss";
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+    a {
+      @include Montserrat-Semibold;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  
+    img {
+      width: 100%;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+  
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  
