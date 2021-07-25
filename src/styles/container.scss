@@ -1,5 +1,4 @@
-$grid-break-point: (
-    // Extra small screen / phone
+$grid-break-point: ( // Extra small screen / phone
     xs: 360px,
     // Small screen / phone
     sm: 576px,
@@ -8,11 +7,18 @@ $grid-break-point: (
     // Large screen / desktop
     lg: 992px,
     // Extra large screen / wide desktop
-    xl: 1100px
+    xl: 1100px,
+
+
 );
 
-$grid-columns: 12;
-$grid-gutter-width: 30px;
+$container-max-widths: (xs: 360px,
+    sm: 540px,
+    md: 768px,
+    lg: 960px,
+    xl: 1100px,
+
+);
 
 .container {
     margin: 0 auto;
@@ -20,23 +26,23 @@ $grid-gutter-width: 30px;
     padding-right: 15px;
     padding-left: 15px;
 
-    @media (min-width: map-get($grid-break-point,"sm")) {
-        max-width: map-get($container-max-width: "sm");
+    @media (min-width: map-get($grid-break-point, "xs")) {
+        max-width: map-get($container-max-widths, "xs");
     }
 
-    @media (min-width: map-get($grid-break-point,"md")) {
-        max-width: map-get($container-max-width: "md");
+    @media (min-width: map-get($grid-break-point, "sm")) {
+        max-width: map-get($container-max-widths, "sm");
     }
 
-    @media (min-width: map-get($grid-break-point,"lg")) {
-        max-width: map-get($container-max-width: "lg");
+    @media (min-width: map-get($grid-break-point, "md")) {
+        max-width: map-get($container-max-widths, "md");
     }
-    
-    @media (min-width: map-get($grid-break-point,"xl")) {
-        max-width: map-get($container-max-width: "xl");
+
+    @media (min-width: map-get($grid-break-point, "lg")) {
+        max-width: map-get($container-max-widths, "lg");
     }
-    
-    @media (min-width: map-get($grid-break-point,"xl")) {
-        max-width: map-get($container-max-width: "xl");
+
+    @media (min-width: map-get($grid-break-point, "xl")) {
+        max-width: map-get($container-max-widths, "xl");
     }
 }
