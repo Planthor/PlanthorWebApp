@@ -3,6 +3,14 @@
   box-sizing: border-box;
   left: 220px;
 
+  @media (min-width:375px) {
+    display: none;
+  }
+
+  @media (min-width:768px) {
+    display: block;
+  }
+
   ul {
     display: flex;
     text-decoration: none;

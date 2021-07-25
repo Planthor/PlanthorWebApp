@@ -1,7 +1,15 @@
 .profile-btn {
     position: absolute;
-    display:flex;
+    display: flex;
     right: 0;
+
+    @media (min-width:375px) {
+        display: none;
+    }
+
+    @media (min-width:768px) {
+        display: flex;
+    }
 
     .btn-sign-in {
         background-color: #ffffff;
@@ -10,7 +18,7 @@
 
         padding: .3em 1em;
         margin: 0 8px;
- 
+
 
         &:hover {
             color: #ffffff;
