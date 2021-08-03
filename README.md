@@ -70,16 +70,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### `npm run lint` to fix lint syntax
-this sectionn has moved here [https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW](https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW)
 
+this sectionn has moved here [https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW](https://viblo.asia/p/su-dung-prettier-cung-eslint-trong-ung-dung-create-react-app-OeVKBMOJ5kW)
 
 # Planthor_ClientBackEndWebApp
 
 Inspired by our learning group - Let Den Giac Mo.
 
 Thanks to all [contributors](https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp/graphs/contributors), you're awesome and this project could not be possible without you! The goal is to build a web-application for goal-progress tracking:
-- [Trung Pham](https://github.com/zovippro1996)
-- [Quang Le](https://github.com/quanglegl1404)
+
+-   [Trung Pham](https://github.com/zovippro1996)
+-   [Quang Le](https://github.com/quanglegl1404)
 
 To be updated...
 
@@ -88,6 +89,7 @@ To be updated...
 To be updated
 
 ```
+
 ```
 
 ## Project setup
@@ -102,5 +104,4 @@ To be updated
 
 ### How to run
 
-- Open the solution in Visual Studio Code
-
+-   Open the solution in Visual Studio Code

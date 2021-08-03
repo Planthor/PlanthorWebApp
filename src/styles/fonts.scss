@@ -1,1 +1,30 @@
-$planthor-font:"Roboto", sans-serif;
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap');
+}
+
+// Medium-Montserrat
+@mixin Montserrat-Medium {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 500;
+}
+
+// SemiBold-Montserrat
+@mixin Montserrat-Semibold {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 600;
+}
+
+// ExtraBold-Montserrat
+@mixin Montserrat-ExtraBold {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 800;
+}
+
+@mixin Montserrat {
+  font-family: 'Montserrat',
+    sans-serif;
+}

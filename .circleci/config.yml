@@ -1,64 +1,64 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.3.0
+    node: circleci/node@4.3.0
 jobs:
-  build:
-    executor:
-      name: node/default
-      tag: "13.14"
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          name: test & build
-          command: npm run test && npm run build
-      - run:
-          name: check folder
-          command: ls
-      - run: mkdir -p workspace
-      - run: cp -r ./build ./workspace && cd workspace && ls
-        # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
-      - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
-          # taken to be the root directory of the workspace.
-          root: workspace
-          # Must be relative path from root
-          paths:
-            - build/*
-  deploy:
-    # machine:
-    #   image: ubuntu-1604:202007-01
-    #   docker_layer_caching: true
-    executor:
-      name: node/default
-      tag: "13.14"
-    steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: /tmp/workspace
-      - run:
-          name: deploy to githubpage
-          command: |
-            cd /tmp/workspace/build &&
-            ls && 
-            git config --global user.email "${PLANTHOR_FRONTEND_CI_EMAIL}" &&
-            git config --global user.name "${PLANTHOR_FRONTEND_CI_USERNAME}" &&
-            git init &&
-            git add . &&
-            git commit -m "update github frontend #${CIRCLE_PREVIOUS_BUILD_NUM}" &&
-            git branch -M main &&
-            git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/planthor-team.github.io.git &&
-            git push -u -f origin main
+    build:
+        executor:
+            name: node/default
+            tag: "13.14"
+        steps:
+            - checkout
+            - node/install-packages
+            - run:
+                  name: test & build
+                  command: npm run test && npm run build
+            - run:
+                  name: check folder
+                  command: ls
+            - run: mkdir -p workspace
+            - run: cp -r ./build ./workspace && cd workspace && ls
+              # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
+            - persist_to_workspace:
+                  # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+                  # taken to be the root directory of the workspace.
+                  root: workspace
+                  # Must be relative path from root
+                  paths:
+                      - build/*
+    deploy:
+        # machine:
+        #   image: ubuntu-1604:202007-01
+        #   docker_layer_caching: true
+        executor:
+            name: node/default
+            tag: "13.14"
+        steps:
+            - attach_workspace:
+                  # Must be absolute path or relative path from working_directory
+                  at: /tmp/workspace
+            - run:
+                  name: deploy to githubpage
+                  command: |
+                      cd /tmp/workspace/build &&
+                      ls && 
+                      git config --global user.email "${PLANTHOR_FRONTEND_CI_EMAIL}" &&
+                      git config --global user.name "${PLANTHOR_FRONTEND_CI_USERNAME}" &&
+                      git init &&
+                      git add . &&
+                      git commit -m "update github frontend #${CIRCLE_PREVIOUS_BUILD_NUM}" &&
+                      git branch -M main &&
+                      git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/planthor-team.github.io.git &&
+                      git push -u -f origin main
 
 workflows:
-  test_my_app:
-    jobs:
-      - build
-      - deploy:
-          filters:
-            branches:
-              only:
-                - main
-                - circle-ci-deploy
-          requires:
+    test_my_app:
+        jobs:
             - build
+            - deploy:
+                  filters:
+                      branches:
+                          only:
+                              - main
+                              - circle-ci-deploy
+                  requires:
+                      - build
