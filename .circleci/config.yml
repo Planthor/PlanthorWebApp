@@ -47,7 +47,7 @@ jobs:
                       git add . &&
                       git commit -m "update github frontend #${CIRCLE_PREVIOUS_BUILD_NUM}" &&
                       git branch -M main &&
-                      git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/planthor-team.github.io.git &&
+                      git remote add origin https://${PLANTHOR_FRONTEND_CI_USERNAME}:${PLANTHOR_FRONTEND_CI_PASSWORD}@github.com/Planthor-Team/Planthor_ClientFrontEndWebApp.git &&
                       git push -u -f origin main
 
 workflows:
