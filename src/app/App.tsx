@@ -12,7 +12,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <NavigationBar />
-            <Routes basename={process.env.PUBLIC_URL}>
+            <Routes>
                 <Route path="" element={<Introduction />} />
                 <Route path="activity" element={<Activity />} />
                 <Route path="profile" element={<ProfileManagement />} />
