@@ -13,7 +13,7 @@
         "@types/react-router": "^5.1.13",
         "@types/react-router-dom": "^5.1.7",
         "@types/redux": "^3.6.31",
-        "axios": "^0.21.1",
+        "axios": "^0.21.2",
         "node-sass": "^6.0.1",
         "query-string": "^7.0.0",
         "react": "^17.0.2",
