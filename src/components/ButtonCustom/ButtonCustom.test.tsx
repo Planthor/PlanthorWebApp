@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import {render, fireEvent, waitFor, screen} from '@testing-library/react'
+import '@testing-library/jest-dom'
 import ButtonCustom from "./ButtonCustom";
-import React from "react";
 
 test("renders ButtonCustom Component", () => {
     render(<ButtonCustom />);

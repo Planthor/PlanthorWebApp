@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom';
 import Goals from "./Goals";
-import React from "react";
 
 test("renders My Goal Component", () => {
     render(<Goals />);

@@ -4,13 +4,15 @@ import queryString from "query-string";
 const axiosClient = axios.create({
     baseURL: "/api",
     paramsSerializer: params =>
-        queryString.stringify(params, { arrayFormat: "comma" })
+        queryString.stringify(params, {arrayFormat: "comma"})
 });
 
 axiosClient.interceptors.request.use(async config => {
-    const contentType = config.headers["Content-Type"];
-    if (!contentType) {
-        config.headers["Content-Type"] = "application/json";
+    if (config.headers) {
+        const contentType = config.headers["Content-Type"];
+        if (!contentType) {
+            config.headers["Content-Type"] = "application/json";
+        }
     }
     return config;
 });
