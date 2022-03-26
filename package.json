@@ -30,7 +30,8 @@
         "eject": "react-scripts eject",
         "build:analyze": "webpack --mode production --env analyze",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d build",
+        "lint": "npx eslint --fix ."
     },
     "eslintConfig": {
         "extends": [
@@ -52,6 +53,10 @@
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^5.16.2",
+        "@typescript-eslint/eslint-plugin": "^5.16.0",
+        "@typescript-eslint/parser": "^5.16.0",
+        "eslint": "^8.12.0",
+        "eslint-plugin-react": "^7.29.4",
         "gh-pages": "^3.2.0",
         "history": "^5.0.0"
     },

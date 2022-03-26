@@ -1,9 +1,9 @@
-import {render} from '@testing-library/react'
-import {ReactElement} from 'react'
+import {render} from "@testing-library/react";
+import {ReactElement} from "react";
 
 const customRender = (
   ui: ReactElement
-) => render(ui)
+) => render(ui);
 
-export * from '@testing-library/react'
-export {customRender as render}
+export * from "@testing-library/react";
+export {customRender as render};

@@ -1,0 +1,8 @@
+/*.js
+** / *. js
+node_modules
+build
+/src/react-app-env.d.ts
+README.*
+LICENSE
+*.json
