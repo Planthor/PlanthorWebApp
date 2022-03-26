@@ -1,4 +1,3 @@
-import React from "react";
 import "./NavBarButton.scss";
 import ButtonCustom from "../../ButtonCustom/ButtonCustom";
 
