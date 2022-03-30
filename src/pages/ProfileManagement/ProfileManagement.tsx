@@ -1,10 +1,10 @@
-import Profiles from "../../components/Profiles/Profiles";
+import React from "react";
 
-export default function ProfileManagement() {
+const  ProfileManagement =() =>{
   return (
     <div>
-      <h1>This is the Profile Management Page</h1>
-      <Profiles />
+      <h1 className="">This is the Profile Management Page</h1>
     </div>
   );
-}
+};
+export default ProfileManagement;
