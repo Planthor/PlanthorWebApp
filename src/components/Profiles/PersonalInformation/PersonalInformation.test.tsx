@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import PersonalInformation from "./PersonalInformation";
-import React from "react";
+import "@testing-library/jest-dom";
 
 test("renders Personal Information Component", () => {
-    render(<PersonalInformation />);
-    const element = screen.getByText("Personal Information Component");
-    expect(element).toBeInTheDocument();
+  render(<PersonalInformation />);
+  const element = screen.getByText("Personal Information Component");
+  expect(element).toBeInTheDocument();
 });

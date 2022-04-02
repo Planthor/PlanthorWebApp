@@ -2,26 +2,28 @@ import axios from "axios";
 import queryString from "query-string";
 
 const axiosClient = axios.create({
-    baseURL: "/api",
-    paramsSerializer: params =>
-        queryString.stringify(params, { arrayFormat: "comma" })
+  baseURL: "/api",
+  paramsSerializer: params =>
+    queryString.stringify(params, {arrayFormat: "comma"})
 });
 
 axiosClient.interceptors.request.use(async config => {
+  if (config.headers) {
     const contentType = config.headers["Content-Type"];
     if (!contentType) {
-        config.headers["Content-Type"] = "application/json";
+      config.headers["Content-Type"] = "application/json";
     }
-    return config;
+  }
+  return config;
 });
 
 axiosClient.interceptors.response.use(
-    async response => {
-        return response;
-    },
-    error => {
-        throw error;
-    }
+  async response => {
+    return response;
+  },
+  error => {
+    throw error;
+  }
 );
 
 export default axiosClient;

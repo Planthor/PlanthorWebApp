@@ -1,8 +1,8 @@
-build/*
-webpack/*
-webpack.config.js
-gulpfile.js
-molisart/src/localization/lang/*
-molisart/src/assets/*
-/src/serviceWorker.ts
-/src/setupTests.ts
+/*.js
+** / *. js
+node_modules
+build
+/src/react-app-env.d.ts
+README.*
+LICENSE
+*.json
