@@ -25,15 +25,3 @@ jobs:
                   # Must be relative path from root
                   paths:
                       - build/*
-workflows:
-    test_my_app:
-        jobs:
-            - build
-            - deploy:
-                  filters:
-                      branches:
-                          only:
-                              - main
-                              - circle-ci-deploy
-                  requires:
-                      - build
