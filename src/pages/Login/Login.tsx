@@ -1,10 +1,8 @@
-import SignInWithFacebook from "../../components/SignInWithFacebook/SignInWithFacebook";
-import "./Login.scss";
-
+import React from "react";
 const Login = () => {
   return (
     <div className="Login-background">
-      <SignInWithFacebook />
+      <h1>Sign In With Facebook Component</h1>
     </div>
   );
 };

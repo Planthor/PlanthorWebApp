@@ -6,27 +6,27 @@ const CreateNewGoal = () => {
       <h1>This is the Create New Goal Page</h1>
       <form>
         <label>
-                    Goal Name
+          Goal Name
           <input type="text"></input>
         </label>
         <br />
         <label>
-                    Goal Description
+          Goal Description
           <textarea></textarea>
         </label>
         <br />
         <label>
-                    Goal current progress
+          Goal current progress
           <input></input>
         </label>
         <br />
         <label>
-                    Goal Number
+          Goal Number
           <input type="text"></input>
         </label>
         <br />
         <label>
-                    Goal Deadline
+          Goal Deadline
           <input></input>
         </label>
         <br />
