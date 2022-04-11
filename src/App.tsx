@@ -1,3 +1,4 @@
+import Footer from "components/Footer/Footer";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -11,10 +12,11 @@ const App = () => {
     <BrowserRouter>
       <NavigationBar />
       <Routes>
-        <Route path="" element={<Introduction />} />
+        <Route path="/" element={<Introduction />} />
         <Route path="activity" element={<Activity />} />
         <Route path="profile" element={<ProfileManagement />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -34,6 +34,9 @@ module.exports = {
         lightred: "#B22425",
         normalblack: "##171717",
       },
+      backgroundImage:{
+        'bg-introduction':'url("./assets/planthor-hompage-imgs/background.png")'
+      }
     },
   },
   plugins: [],
