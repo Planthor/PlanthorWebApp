@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  .primary-btn{
+    @apply border-solid border-2 border-sky-500 rounded-lg px-4
+  }
+}
