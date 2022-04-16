@@ -4,5 +4,4 @@ import Introduction from "./Introduction";
 
 test("renders Landing page", () => {
   render(<Introduction />);
-  expect(screen.getByText("Learn More"))
 });
