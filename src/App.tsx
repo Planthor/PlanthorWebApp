@@ -1,5 +1,4 @@
 import Footer from "components/Footer/Footer";
-import React from "react";
 import ComponentWidget from "pages/ComponentWidget/ComponentWidget";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
