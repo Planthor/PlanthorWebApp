@@ -26,16 +26,16 @@ module.exports = {
       // @media (min-width: 1546px)  {....}
     },
     extend: {
-      color: {
-        primaryblue: "#1E82C5",
-        secondaryblue: "#4a68b1",
-        normaltext: "#FFFFFF",
-        darkred: "#570E0E",
-        lightred: "#B22425",
-        normalblack: "##171717",
+      colors: {
+        'primary-blue': "#1E82C5",
+        'secondary-blue': "#4a68b1",
+        'normal-text': "#FFFFFF",
+        'dark-red': "#570E0E",
+        'light-red': "#B22425",
+        'normal-black': "#171717",
       },
-      backgroundImage:{
-        'bg-introduction':'url("./assets/planthor-hompage-imgs/background.png")'
+      backgroundImage: {
+        'bg-introduction': 'url("./assets/planthor-hompage-imgs/background.png")'
       }
     },
   },
