@@ -47,7 +47,7 @@ export default function ComponentWidget() {
         <input type="text" placeholder="Goal Name"></input>
         <input type="checkbox" id="demo-unchecked-box" name="demo-unchecked-box"></input>
         <label htmlFor="demo-unchecked-box">Remember me</label>
-        <input type="checkbox" id="demo-checked-box" name="demo-checked-box" checked></input>
+        <input type="checkbox" id="demo-checked-box" name="demo-checked-box" defaultChecked></input>
         <label htmlFor="demo-checked-box">Remember me</label>
       </div>
 
