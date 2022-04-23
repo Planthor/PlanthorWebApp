@@ -1,5 +1,5 @@
 import Footer from "components/Footer/Footer";
-import React from "react";
+import ComponentWidget from "pages/ComponentWidget/ComponentWidget";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
@@ -15,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Introduction />} />
         <Route path="activity" element={<Activity />} />
         <Route path="profile" element={<ProfileManagement />} />
+        <Route path="component-widget" element={<ComponentWidget />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -5,15 +5,23 @@ const NavigationBar = () => {
     id: "m1",
     text: "Menu",
     path: "activity"
-  }, {
+  },
+  {
     id: "m2",
     text: "Management",
     path: "profile"
-  }, {
+  },
+  {
     id: "m3",
     text: "Discover",
     path: "discover"
-  }];
+  },
+  {
+    id: "m4",
+    text: "(demo)ComponentWidget",
+    path: "component-widget"
+  }
+  ];
 
   return (
     <div className="bg-whie shadow-lg h-12 w-full flex items-center fixed top-0 left-0 right-0 z-50">

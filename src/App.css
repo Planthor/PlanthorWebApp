@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap");
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
 body {
   font-family: 'Montserrat', sans-serif;
   padding: 0;
