@@ -23,7 +23,7 @@ const NavigationBar = () => {
   ];
 
   return (
-    <div className="sticky bg-white shadow-lg h-12 w-full flex items-center fixed top-0 left-0 right-0 z-50">
+    <div className="sticky bg-white shadow-lg h-12 w-full flex items-center top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between">
         <div>
           <a href="/">
