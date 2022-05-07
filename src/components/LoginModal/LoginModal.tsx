@@ -1,7 +1,7 @@
 function LoginModal() {
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-xl sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-      <p className="text-primary-blue text-5xl font-bold">Sign in to Planthor</p>
+    <div className="p-10">
+      <p className="font-extrabold text-primary-blue text-5xl">Sign in to Planthor</p>
       <div>
         <label className="text-3xl font-bold">User Name or Email Address</label>
         <input type="text"></input>
