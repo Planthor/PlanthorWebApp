@@ -1,3 +1,5 @@
+import LoginModal from "components/LoginModal/LoginModal";
+
 export default function ComponentWidget() {
   return (
     <div>
@@ -6,7 +8,7 @@ export default function ComponentWidget() {
         <h2>
           Login Component
         </h2>
-        <div className="max-w-sm mx-auto bg-white rounded-xl sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+        {/* <div className="max-w-sm mx-auto bg-white rounded-xl sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
           <p className="text-primary-blue text-5xl font-bold">Sign in to Planthor</p>
           <div>
             <label className="text-3xl font-bold">User Name or Email Address</label>
@@ -25,7 +27,8 @@ export default function ComponentWidget() {
           <p>Or</p>
           <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-red-300">Sign in with Facebook</button>
           <a>Create an account</a>
-        </div>
+        </div> */}
+        <LoginModal></LoginModal>
       </div>
 
       <div>

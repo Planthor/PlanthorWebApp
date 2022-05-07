@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/LogoPlanthor.png";
 const NavigationBar = () => {
   const listMenu = [{
