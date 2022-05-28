@@ -19,6 +19,11 @@ const NavigationBar = () => {
     id: "m4",
     text: "(demo)ComponentWidget",
     path: "component-widget"
+  },
+  {
+    id: "m5",
+    text: "(demo)ComponentWidget",
+    path: "component-widget"
   }
   ];
 
