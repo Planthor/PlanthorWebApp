@@ -48,8 +48,8 @@ const NavigationBar = () => {
           </ul>
         </nav>
         <div className="flex justify-end items-center">
-          <button type="button" className="primary-btn hover:bg-sky-500 mr-3">SignIn -- Rebase -- Phat -- Trung</button>
-          <button type="button" className="primary-btn bg-sky-500 hover:bg-white ">SignUp --- Rebase -- Phat -- Trung</button>
+          <button type="button" className="primary-btn hover:bg-sky-500 mr-3">SignIn</button>
+          <button type="button" className="primary-btn bg-sky-500 hover:bg-white ">SignUp</button>
         </div>
       </div>
     </div>);
