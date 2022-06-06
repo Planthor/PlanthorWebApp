@@ -1,5 +1,4 @@
 import logo from "../../assets/LogoPlanthor.png";
-import {createBrowserHistory} from "history";
 import {Link, useNavigate} from "react-router-dom";
 
 const NavigationBar = () => {
