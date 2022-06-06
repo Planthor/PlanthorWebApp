@@ -1,7 +1,7 @@
 const ProfileManagement = () => {
   return (
     <div>
-      <h1 className="">This is the Profile Management Page</h1>
+      <h1 className="text-black">This is the Profile Management Page</h1>
     </div>
   );
 };
