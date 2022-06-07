@@ -1,9 +1,9 @@
 import logo from "../../assets/LogoPlanthor.png";
-import {createBrowserHistory} from "history";
 import {Link, useNavigate} from "react-router-dom";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
+
   const listMenu = [
     {
       id: "m1",
@@ -28,7 +28,6 @@ const NavigationBar = () => {
   ];
 
   const signInClickHandler = () => {
-    console.log("waitting...");
     navigate("./Login");
   };
 
