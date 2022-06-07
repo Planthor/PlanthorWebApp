@@ -11,3 +11,6 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = false
 max_line_length = 80
+
+[**]
+ij_html_space_inside_empty_tag = true

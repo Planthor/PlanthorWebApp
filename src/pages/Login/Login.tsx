@@ -1,7 +1,10 @@
+import React from "react";
+import LoginModal from "../../components/LoginModal/LoginModal";
+
 const Login = () => {
   return (
-    <div className="Login-background">
-      <h1>Sign In With Facebook Component</h1>
+    <div className="bg-bg-login h-h-origin bg-scroll bg-no-repeat bg-cover">
+      <LoginModal/>
     </div>
   );
 };

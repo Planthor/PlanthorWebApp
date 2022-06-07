@@ -35,7 +35,11 @@ module.exports = {
         'normal-black': "#171717",
       },
       backgroundImage: {
-        'bg-introduction': 'url("./assets/planthor-hompage-imgs/background.png")'
+        'bg-introduction': 'url("./assets/planthor-hompage-imgs/background.png")',
+        'bg-login':'url("./assets/login-imgs/bgLogin.png")'
+      },
+      height:{
+        'h-origin': '89vh',
       }
     },
   },
