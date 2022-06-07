@@ -6,7 +6,7 @@ import ComponentWidget from "../pages/ComponentWidget/ComponentWidget";
 import Login from "../pages/Login/Login";
 
 const Router = () => {
-  const applicationRouter = useRoutes([
+  return useRoutes([
     {
       path: "/",
       element: <Introduction />,
@@ -28,7 +28,6 @@ const Router = () => {
       element: <Login />
     },
   ]);
-  return applicationRouter;
 };
 
 export default Router;
