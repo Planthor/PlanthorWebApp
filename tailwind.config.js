@@ -37,6 +37,9 @@ module.exports = {
       backgroundImage: {
         'bg-introduction': 'url("./assets/planthor-hompage-imgs/background.png")',
         'bg-login':'url("./assets/login-imgs/bgLogin.png")'
+      },
+      height:{
+        'h-origin': '89vh',
       }
     },
   },

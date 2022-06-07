@@ -4,5 +4,5 @@ import Login from "./Login";
 
 test("renders Activity page", () => {
   render(<Login />);
-  expect(screen.getByText("Sign In With Facebook Component")).toBeInTheDocument();
+  expect(screen.getByAltText("Sign in")).toBeInTheDocument();
 });

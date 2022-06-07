@@ -2,7 +2,7 @@ import React from "react";
 
 const Introduction = () => {
   return (
-    <div className="bg-bg-introduction bg-cover bg-no-repeat h-screen bg-right-bottom">
+    <div className="bg-bg-introduction bg-cover bg-no-repeat h-h-origin bg-right-bottom">
       <div className="container mx-auto">
         <div className="absolute w-96 top-80">
           <h2 className="font-extrabold text-5xl pb-3">Lorem ipsum dolorsit</h2>
