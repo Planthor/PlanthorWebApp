@@ -12,7 +12,7 @@ jobs:
             - run:
                   name: test & build
                   command: npm run test && npm run build
-            - store_test_results
+            
             - run: mkdir -p workspace
             - run: cp -r ./build ./workspace && cd workspace && ls
               # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
