@@ -25,7 +25,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build && npx eslint --fix .",
+        "build": "react-scripts build && npx eslint --fix . && cp build/index.html build/404.html",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "build:analyze": "webpack --mode production --env analyze",
