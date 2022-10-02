@@ -56,7 +56,5 @@ workflows:
                       branches:
                           only:
                               - main
-                              - circle-ci-deploy
-                              - feature/implement-deply-stage-cricleci
                   requires:
                       - build
