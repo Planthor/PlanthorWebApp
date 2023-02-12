@@ -1,5 +1,5 @@
 {
-	"name": "Node.js",
+	"name": "Planthor frontend",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
@@ -14,7 +14,9 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"jawandarajbir.react-vscode-extension-pack",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	},

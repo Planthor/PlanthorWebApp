@@ -28,6 +28,3 @@ Before getting started, make sure you have the following software installed on y
 ## Conclusion
 
 With a devcontainer, you can easily set up a consistent development environment for your Node.js projects. This makes it easier to share code and collaborate with other developers, as everyone can work in the same environment. Additionally, the devcontainer can be used to test your code in different environments, without having to worry about any dependencies or configurations on your local machine.
-
-
--- copy right by chat GPT --
