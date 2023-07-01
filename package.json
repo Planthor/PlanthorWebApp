@@ -1,67 +1,29 @@
 {
-    "name": "planthor",
-    "homepage": "https://planthor-team.github.io/",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.7.2",
-        "@testing-library/react": "^9.5.0",
-        "@testing-library/user-event": "^7.2.1",
-        "@types/jest": "^24.9.1",
-        "@types/node": "^12.20.46",
-        "@types/react": "^16.14.23",
-        "@types/react-dom": "^16.9.14",
-        "@types/react-redux": "^7.1.22",
-        "axios": "^0.26.0",
-        "cra-template-tailwindcss-typescript": "^3.0.1",
-        "query-string": "^7.1.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-redux": "^7.2.6",
-        "react-router-dom": "^6.2.1",
-        "react-scripts": "5.0.0",
-        "typescript": "~4.1.5",
-        "web-vitals": "^2.1.4"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build && npx eslint --fix . && cp build/index.html build/404.html",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "build:analyze": "webpack --mode production --env analyze",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-        "lint": "npx eslint --fix ."
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@testing-library/jest-dom": "^5.16.2",
-        "@typescript-eslint/eslint-plugin": "^5.16.0",
-        "@typescript-eslint/parser": "^5.16.0",
-        "autoprefixer": "^10.4.4",
-        "eslint": "^8.12.0",
-        "eslint-plugin-react": "^7.29.4",
-        "gh-pages": "^3.2.0",
-        "history": "^5.0.0",
-        "postcss": "^8.4.12",
-        "tailwindcss": "^3.0.23"
-    },
-    "jest": {}
+  "name": "planthor-clientfrontendwebapp",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@fontsource/fira-mono": "^4.5.10",
+    "@neoconfetti/svelte": "^1.0.0",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.5.0",
+    "@types/cookie": "^0.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-svelte": "^2.30.0",
+    "svelte": "^3.54.0",
+    "svelte-check": "^3.0.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "type": "module"
 }
