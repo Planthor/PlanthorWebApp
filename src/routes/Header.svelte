@@ -27,12 +27,12 @@
   <nav>
     <ul>
       <li
-        aria-current={$page.url.pathname === "/products" ? "page" : undefined}
+        aria-current={$page.url.pathname === "/login" ? "page" : undefined}
       >
-        <a href="/products">Login</a>
+        <a href="/login">Login</a>
       </li>
-      <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
-        <a href="/about">Sign Up</a>
+      <li aria-current={$page.url.pathname === "/sign-up" ? "page" : undefined}>
+        <a href="/sign-up">Sign Up</a>
       </li>
     </ul>
   </nav>
