@@ -1,6 +1,5 @@
 <script>
   import { page } from "$app/stores";
-  import github from "$lib/images/github.svg";
   import logo from "$lib/images/logo-planthor.svg";
 </script>
 
@@ -10,7 +9,6 @@
       <img src={logo} alt="Planthor" />
     </a>
   </div>
-
   <nav>
     <ul>
       <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
@@ -26,16 +24,18 @@
       </li>
     </ul>
   </nav>
-
-  <div class="corner">
-    <a
-      target="_blank"
-      rel="noreferrer"
-      href="https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp"
-    >
-      <img src={github} alt="GitHub" />
-    </a>
-  </div>
+  <nav>
+    <ul>
+      <li
+        aria-current={$page.url.pathname === "/products" ? "page" : undefined}
+      >
+        <a href="/products">Login</a>
+      </li>
+      <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
+        <a href="/about">Sign Up</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <style>
@@ -45,8 +45,7 @@
   }
 
   .corner {
-    width: 3em;
-    height: 3em;
+    display: flex;
   }
 
   .corner a {
