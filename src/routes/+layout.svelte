@@ -1,10 +1,15 @@
 <script>
+  import { page } from "$app/stores";
+  import "../app.postcss";
   import Header from "./Header.svelte";
-  import "./styles.css";
+  import "./styles.scss";
+  import "../styles/common.scss";
 </script>
 
-<div class="app">
-  <Header />
+<div class="app {$page.url.pathname === '/login' ? 'background' : ''}">
+  {#if $page.url.pathname !== "/login"}
+    <Header />
+  {/if}
 
   <main>
     <slot />
@@ -17,7 +22,16 @@
   </footer>
 </div>
 
-<style>
+<svelte:head>
+  <title>Planthor{$page.data.title ? ` - ${$page.data.title}` : ""}</title>
+</svelte:head>
+
+<style lang="scss">
+  .background {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    width: 100%;
+    height: 100vh;
+  }
   .app {
     display: flex;
     flex-direction: column;
