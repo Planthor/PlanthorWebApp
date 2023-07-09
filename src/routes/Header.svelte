@@ -23,7 +23,7 @@
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
         <a href="/about">About</a>
       </li>
-      <Button element="a" variant={"outline"} href="/login">Login</Button>
+      <Button element="a" variant="outline" href="/login">Login</Button>
     </ul>
   </nav>
 </header>

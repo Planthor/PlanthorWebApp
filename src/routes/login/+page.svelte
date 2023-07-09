@@ -1,9 +1,14 @@
+<script>
+  import { InputField } from "$components";
+</script>
+
 <div class="bg-login">
   <h1>Welcome to Planthor</h1>
   <form method="POST">
     <div class="form-row__input">
       <label for="username">Username or Email</label>
-      <input type="text" id="username" />
+      <!-- <input type="text" id="username" /> -->
+      <InputField element="input" variant="normal" />
     </div>
     <div class="form-row__input">
       <label for="password">Password</label>
