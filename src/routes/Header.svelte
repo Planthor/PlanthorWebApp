@@ -23,12 +23,12 @@
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
         <a href="/about">About</a>
       </li>
-      <Button element="a" variant="outline" href="/login">Login</Button>
+      <Button element="a" variant="basic" href="/login">Login</Button>
     </ul>
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   header {
     display: flex;
     justify-content: space-between;
@@ -91,6 +91,6 @@
   }
 
   a:hover {
-    color: var(--color-theme-2);
+    color: $color-blue-500;
   }
 </style>

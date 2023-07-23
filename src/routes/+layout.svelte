@@ -6,21 +6,28 @@
   import "../styles/common.scss";
 </script>
 
-<div class="app {$page.url.pathname === '/login' ? 'background' : ''}">
-  {#if $page.url.pathname !== "/login"}
+{#if $page.url.pathname === "/login"}
+  <div class="background login-wrapper"><slot /></div>
+{/if}
+
+{#if $page.url.pathname !== "/login"}
+  <div class="app">
     <Header />
-  {/if}
 
-  <main>
-    <slot />
-  </main>
+    <main>
+      <slot />
+    </main>
 
-  <footer>
-    <p>
-      visit <a href="https://kit.svelte.dev">Planthor</a> to Discover
-    </p>
-  </footer>
-</div>
+    <footer>
+      <p>
+        visit <a
+          href="https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp"
+          >Planthor</a
+        > to Discover
+      </p>
+    </footer>
+  </div>
+{/if}
 
 <svelte:head>
   <title>Planthor{$page.data.title ? ` - ${$page.data.title}` : ""}</title>
@@ -31,6 +38,9 @@
     background-image: linear-gradient(to right, #141e30, #243b55);
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .app {
     display: flex;
@@ -59,6 +69,13 @@
 
   footer a {
     font-weight: bold;
+  }
+
+  .login-wrapper {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (min-width: 480px) {

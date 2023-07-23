@@ -13,12 +13,13 @@
 
   type $$Props = ButtonComponentElements[Element] & {
     element: Element;
-    variant?: "solid" | "outline" | "danger";
+    variant?: "basic" | "solid" | "outline" | "danger" | "fullwidth";
     className?: string;
   };
 
   export let element: Element;
-  export let variant: "solid" | "outline" | "danger" = "solid";
+  export let variant: "basic" | "solid" | "outline" | "danger" | "fullwidth" =
+    "solid";
   export let className: string = "";
 
   let node: HTMLAnchorElement | HTMLButtonElement;
@@ -43,11 +44,24 @@
     display: inline-block;
     border: none;
     font-weight: 600;
-    // font-size: functions.toRem(14);
-    border-radius: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5;
     cursor: pointer;
     padding: 7px 15px;
     text-decoration: none;
+
+    &.button-fullwidth {
+      background-color: $color-blue-500;
+      color: #fff;
+      width: 100%;
+    }
+
+    &.button-basic {
+      background-color: $color-blue-500;
+      color: #fff;
+    }
     &.button-solid {
       background-color: var(--accent-color);
       color: #000;
