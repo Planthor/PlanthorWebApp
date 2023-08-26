@@ -3,11 +3,26 @@ orbs:
   node: circleci/node@5.1.0
 
 workflows:
-    example-workflow:
+    planthor-fe-ci :
       jobs:
         - node/run:
             app-dir: ./ 
             cache-version: v1 
-            npm-run: test 
+            npm-run: build 
+            pkg-manager: npm 
+            resource_class: large 
+
+        - node/test:
+            app-dir: ./ 
+            cache-version: v1 
+            pkg-manager: npm 
+            resource_class: large 
+            run-command: check 
+            test-results-for: other
+
+        - node/run:
+            app-dir: ./ 
+            cache-version: v1 
+            npm-run: lint 
             pkg-manager: npm 
             resource_class: large 
