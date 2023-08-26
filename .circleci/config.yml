@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:18
+      - image: circleci/node:5.0
         auth:
           username: ${docker_hub_username}
           password: ${docker_password}
@@ -12,7 +12,7 @@ jobs:
       - run: npm run build
   test:
     docker:
-      - image: circleci/node:18
+      - image: circleci/node:5.0
         auth:
           username: ${docker_hub_username}
           password: ${docker_password}
