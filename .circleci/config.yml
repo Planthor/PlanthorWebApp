@@ -9,9 +9,10 @@ jobs:
         steps:
             - checkout
             - node/install-packages
-            - run:
-                name: test & build
-                command: npm run check && npm build
+            - node/run:
+                npm-run: test 
+                pkg-manager: npm 
+                resource_class: large 
 
 
 workflows:
