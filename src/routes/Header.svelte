@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import { Button } from "$components";
   import logo from "$lib/images/logo-planthor.svg";
 </script>
 
@@ -22,26 +23,17 @@
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
         <a href="/about">About</a>
       </li>
-    </ul>
-  </nav>
-  <nav>
-    <ul>
-      <li
-        aria-current={$page.url.pathname === "/login" ? "page" : undefined}
-      >
-        <a href="/login">Login</a>
-      </li>
-      <li aria-current={$page.url.pathname === "/sign-up" ? "page" : undefined}>
-        <a href="/sign-up">Sign Up</a>
-      </li>
+      <Button element="a" variant="basic" href="/login">Login</Button>
     </ul>
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   header {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .corner {
@@ -52,11 +44,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     height: 100%;
   }
   .corner img {
-    width: 2em;
     height: 2em;
     object-fit: contain;
   }
@@ -100,6 +91,6 @@
   }
 
   a:hover {
-    color: var(--color-theme-1);
+    color: $color-blue-500;
   }
 </style>

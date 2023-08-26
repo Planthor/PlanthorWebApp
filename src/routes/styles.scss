@@ -6,13 +6,15 @@
   --font-mono: "Fira Mono", monospace;
   --color-theme-1: #ff3e00;
   --color-theme-2: #4075a6;
+  --color-background: #1a56db;
   --color-text: rgba(0, 0, 0, 0.7);
   font-family: var(--font-body);
   color: var(--color-text);
 }
 
-/* body {
-} */
+body {
+  margin: 0;
+}
 
 h1,
 h2,
@@ -76,16 +78,4 @@ button:focus:not(:focus-visible) {
   h1 {
     font-size: 2.4rem;
   }
-}
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
 }

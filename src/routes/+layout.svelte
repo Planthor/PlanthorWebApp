@@ -1,23 +1,47 @@
 <script>
+  import { page } from "$app/stores";
+  import "../app.postcss";
   import Header from "./Header.svelte";
-  import "./styles.css";
+  import "./styles.scss";
+  import "../styles/common.scss";
 </script>
 
-<div class="app">
-  <Header />
+{#if $page.url.pathname === "/login"}
+  <div class="background login-wrapper"><slot /></div>
+{/if}
 
-  <main>
-    <slot />
-  </main>
+{#if $page.url.pathname !== "/login"}
+  <div class="app">
+    <Header />
 
-  <footer>
-    <p>
-      visit <a href="https://kit.svelte.dev">Planthor</a> to Discover
-    </p>
-  </footer>
-</div>
+    <main>
+      <slot />
+    </main>
 
-<style>
+    <footer>
+      <p>
+        visit <a
+          href="https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp"
+          >Planthor</a
+        > to Discover
+      </p>
+    </footer>
+  </div>
+{/if}
+
+<svelte:head>
+  <title>Planthor{$page.data.title ? ` - ${$page.data.title}` : ""}</title>
+</svelte:head>
+
+<style lang="scss">
+  .background {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .app {
     display: flex;
     flex-direction: column;
@@ -45,6 +69,13 @@
 
   footer a {
     font-weight: bold;
+  }
+
+  .login-wrapper {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (min-width: 480px) {
