@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:5.1.0
+      - image: cimg/node:20.4.0
     steps:
       - checkout
       - run:
