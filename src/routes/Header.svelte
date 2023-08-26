@@ -1,7 +1,17 @@
-<script>
+<script lang="ts">
+  import { invalidateAll } from "$app/navigation";
   import { page } from "$app/stores";
   import { Button } from "$components";
   import logo from "$lib/images/logo-planthor.svg";
+
+  export let user: any;
+
+  const logout = async () => {
+    const response = await fetch("/api/logout", { method: "POST" });
+    if (response.ok) {
+      invalidateAll();
+    }
+  };
 </script>
 
 <header>
@@ -23,7 +33,16 @@
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
         <a href="/about">About</a>
       </li>
-      <Button element="a" variant="basic" href="/login">Login</Button>
+      {#if !user}
+        <Button element="a" variant="basic" href="/login">Login</Button>
+      {:else}
+        <form
+          method="POST"
+          action="/login?/logout&redirectTo={$page.url.pathname}"
+        >
+          <Button element="a" variant="basic" on:click={logout}>Logout</Button>
+        </form>
+      {/if}
     </ul>
   </nav>
 </header>

@@ -1,7 +1,13 @@
 <script lang="ts">
+  import { enhance } from "$app/forms";
+  import { page } from "$app/stores";
   import { InputField } from "$components";
   import Button from "$components/Button.svelte";
   import logo from "$lib/images/logo-planthor.svg";
+  import type { ActionData } from "./$types";
+
+  export let form: ActionData;
+  $: console.log($page.form, $page.status);
 </script>
 
 <div class="login-container">
@@ -14,14 +20,25 @@
       </div>
       <h3>Welcome to Planthor</h3>
     </div>
-    <form method="POST">
+    <form method="POST" action="?/login" use:enhance>
       <div class="form-row__input">
         <label for="username">Username or Email</label>
-        <InputField element="input" placeholder="User name" />
+        <InputField element="input" placeholder="User name" name="username" />
+        {#if form?.usernameMissing}
+          <p style="color: red; margin:0">Username is required!</p>
+        {/if}
       </div>
       <div class="form-row__input">
         <label for="password">Password</label>
-        <InputField element="input" placeholder="Password" />
+        <InputField
+          element="input"
+          placeholder="Password"
+          name="password"
+          type="password"
+        />
+        {#if form?.passwordMissing}
+          <p style="color: red; margin:0">Password is required!</p>
+        {/if}
       </div>
       <Button element="button" variant="fullwidth">Login</Button>
     </form>
