@@ -10,7 +10,6 @@
   let error = "";
 
   export let form: ActionData;
-  $: console.log($page.form, $page.status);
 </script>
 
 <div class="login-container">
@@ -49,7 +48,7 @@
         <label for="username">Username or Email</label>
         <InputField element="input" placeholder="User name" name="username" />
         {#if form?.usernameMissing}
-          <p style="color: red; margin:0">Username is required!</p>
+          <p class="p-required">Username is required!</p>
         {/if}
       </div>
       <div class="form-row__input">
@@ -61,7 +60,7 @@
           type="password"
         />
         {#if form?.passwordMissing}
-          <p style="color: red; margin:0">Password is required!</p>
+          <p class="p-required">Password is required!</p>
         {/if}
       </div>
       <Button element="button" variant="fullwidth" disabled={isLoading}
@@ -88,6 +87,11 @@
       .form-row__input {
         margin-bottom: 1rem;
         gap: 0.5rem;
+
+        .p-required {
+          color: red;
+          margin: 0;
+        }
       }
     }
 

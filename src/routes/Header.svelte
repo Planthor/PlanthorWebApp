@@ -4,7 +4,8 @@
   import { Button } from "$components";
   import logo from "$lib/images/logo-planthor.svg";
 
-  export let user: any;
+  type User = { name: string; id: number };
+  export let user: User;
 
   const logout = async () => {
     const response = await fetch("/api/logout", { method: "POST" });
