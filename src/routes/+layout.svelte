@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
   import "../app.postcss";
   import Header from "./Header.svelte";
   import "./styles.scss";
   import "../styles/common.scss";
+  import type { LayoutData } from "./$types";
+
+  export let data: LayoutData;
 </script>
 
 {#if $page.url.pathname === "/login"}
@@ -12,7 +15,7 @@
 
 {#if $page.url.pathname !== "/login"}
   <div class="app">
-    <Header />
+    <Header user={data.user} />
 
     <main>
       <slot />
