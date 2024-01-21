@@ -3,11 +3,14 @@ name: Planthor FE CI
 on:
   push:
     branches:
-      - main # adjust the branch as needed
+      - main 
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout repository
@@ -16,17 +19,16 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 14 # adjust the Node.js version as needed
-
+        node-version: 18
+        
     - name: Install dependencies and build
       run: |
         npm install
         npm run build
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -34,16 +36,15 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 14 # adjust the Node.js version as needed
+        node-version: 18
 
     - name: Install dependencies
       run: npm install
 
     - name: Run tests
+      if: always()
       run: npm run check
 
-    - name: Upload test results
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: path/to/your/test-results-directory # adjust the path as needed
+    - name: Run lint
+      if: always()
+      run: npm run build_lint
