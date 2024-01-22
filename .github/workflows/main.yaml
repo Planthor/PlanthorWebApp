@@ -52,7 +52,10 @@ jobs:
     - name: 'Report Coverage'
       if: always() 
       uses:  davelosert/vitest-coverage-report-action@v2
-
+      with:
+        json-final-path: ./coverage/coverage-final.json
+        vite-config-path: ./vite.config.ts
+        
     - uses: actions/upload-artifact@v4
       with:
         name: coverage_report
