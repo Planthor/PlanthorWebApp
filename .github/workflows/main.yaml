@@ -48,16 +48,10 @@ jobs:
     - name: Run lint
       if: always()
       run: npm run coverage
-    
-    - name: Produce the coverage report
-      uses: insightsengineering/coverage-action@v2
-      with:
-        path: ./coverage/clover.xml
-        fail: true
-        publish: true
-        diff: true
-        diff-branch: main
-        coverage-summary-title: "Code Coverage Summary"
+
+    - name: 'Report Coverage'
+      if: always() 
+      uses:  davelosert/vitest-coverage-report-action@v2
 
     - uses: actions/upload-artifact@v4
       with:
