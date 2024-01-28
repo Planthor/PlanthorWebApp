@@ -1,19 +1,5 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from "svelte/elements";
-
   type Element = $$Generic<"input">;
-
-  interface InputFieldComponentElements {
-    input: HTMLInputAttributes;
-  }
-
-  type $$Props = InputFieldComponentElements[Element] & {
-    element: Element;
-    variant?: "text" | "textarea";
-    className?: string;
-    value?: string;
-    placeholder: string;
-  };
 
   export let element: Element;
   export let className = "";

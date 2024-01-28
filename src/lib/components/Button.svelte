@@ -1,21 +1,6 @@
 <script lang="ts">
-  import type {
-    HTMLAnchorAttributes,
-    HTMLButtonAttributes,
-  } from "svelte/elements";
 
   type Element = $$Generic<"button" | "a">;
-
-  interface ButtonComponentElements {
-    button: HTMLButtonAttributes;
-    a: HTMLAnchorAttributes;
-  }
-
-  type $$Props = ButtonComponentElements[Element] & {
-    element: Element;
-    variant?: "basic" | "solid" | "outline" | "danger" | "fullwidth";
-    className?: string;
-  };
 
   export let element: Element;
   export let variant: "basic" | "solid" | "outline" | "danger" | "fullwidth" =
@@ -29,8 +14,7 @@
   }
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<svelte:element
+<!-- svelte-ignore a11y-no-static-element-interactions --><svelte:element
   this={element}
   bind:this={node}
   class="button button-{variant} {className}"
