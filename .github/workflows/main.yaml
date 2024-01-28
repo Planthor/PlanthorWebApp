@@ -37,12 +37,14 @@ jobs:
     - name: Run tests
       if: always()
       run: npm run check
-    - name: Run lint code 
+    - name: Run lint code
+      if: always()
       run: npm run lint
     - name: Run coverage
       if: always()
       run: npm run coverage
     - uses: actions/upload-artifact@v4
+      if: always()
       with:
         name: coverage_report
         path: ./coverage
