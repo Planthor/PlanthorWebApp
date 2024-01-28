@@ -1,6 +1,5 @@
 <script lang="ts">
   import { applyAction, enhance } from "$app/forms";
-  import { page } from "$app/stores";
   import { InputField } from "$components";
   import Button from "$components/Button.svelte";
   import logo from "$lib/images/logo-planthor.svg";
@@ -28,10 +27,10 @@
     <form
       method="POST"
       action="?/login"
-      use:enhance={({ form, data, action, cancel }) => {
+      use:enhance={() => {
         isLoading = true;
 
-        return ({ result, update }) => {
+        return ({ result }) => {
           isLoading = false;
 
           if (result.type === "failure" || result.type === "redirect") {

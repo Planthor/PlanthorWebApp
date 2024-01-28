@@ -44,11 +44,20 @@ vi.mock("$app/stores", () => {
   };
 
   const page = {
-    subscribe(fn: Subscriber<{ url /* eslint-disable @typescript-eslint/no-empty-function */: URL; params: {}; routeId: null; status: number; error: null; data: {}; }>) {
+    subscribe(
+      fn: Subscriber<{
+        url: URL;
+        params: object;
+        routeId: null;
+        status: number;
+        error: null;
+        data: object;
+      }>
+    ) {
       return getStores().page.subscribe(fn);
     },
   };
-  const navigating= {
+  const navigating = {
     subscribe(fn: Subscriber<Navigation | null>) {
       return getStores().navigating.subscribe(fn);
     },

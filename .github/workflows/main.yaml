@@ -1,0 +1,58 @@
+name: Planthor FE CI
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies and build
+      run: |
+        npm install
+        npm run build
+  test:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      if: always()
+      run: npm run check
+    - name: Run lint code
+      if: always()
+      run: npm run lint
+    - name: Run coverage
+      if: always()
+      run: npm run coverage
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: coverage_report
+        path: ./coverage
+    - name: Generate coverage report
+      if: always()
+      run: npm run gen_coverage_report
+    - name: 'Report Coverage'
+      if: always() 
+      uses:  davelosert/vitest-coverage-report-action@v2
+      with:
+        vite-config-path: ./vite.config.ts
