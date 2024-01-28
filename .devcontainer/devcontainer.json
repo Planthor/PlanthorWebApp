@@ -6,6 +6,9 @@
 	},
 	"customizations": {
 		"vscode": {
+			"setting": {
+				"editor.guides.bracketPairs" : "active"
+			},
 			"extensions": [
 				"dbaeumer.vscode-eslint",
 				"jawandarajbir.react-vscode-extension-pack",
