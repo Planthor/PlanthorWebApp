@@ -39,9 +39,9 @@ jobs:
       run: npm run check
     - name: Run lint code 
       run: npm run lint
-    - name: Run converage
+    - name: Run coverage
       if: always()
-      run: npm run converage
+      run: npm run coverage
     - uses: actions/upload-artifact@v4
       with:
         name: coverage_report
