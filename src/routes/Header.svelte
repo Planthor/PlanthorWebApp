@@ -4,7 +4,7 @@
   import { Button } from "$components";
   import logo from "$lib/images/logo-planthor.svg";
 
-  type User = { name: string; id: number };
+  type User = { name: string; id: number } | undefined;
   export let user: User;
 
   const logout = async () => {

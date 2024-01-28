@@ -16,7 +16,7 @@
   };
 
   export let element: Element;
-  export let className: string = "";
+  export let className = "";
 </script>
 
 <svelte:element

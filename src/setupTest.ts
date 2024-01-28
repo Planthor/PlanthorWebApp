@@ -44,7 +44,7 @@ vi.mock("$app/stores", () => {
   };
 
   const page = {
-    subscribe(fn: Subscriber<{ url /* eslint-disable @typescript-eslint/no-empty-function */: URL; params: {}; routeId: null; status: number; error: null; data: {}; }>) {
+    subscribe(fn: Subscriber<{ url /* eslint-disable @typescript-eslint/no-empty-function */: URL; params: any; routeId: null; status: number; error: null; data: any; }>) {
       return getStores().page.subscribe(fn);
     },
   };

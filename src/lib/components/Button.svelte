@@ -20,7 +20,7 @@
   export let element: Element;
   export let variant: "basic" | "solid" | "outline" | "danger" | "fullwidth" =
     "solid";
-  export let className: string = "";
+  export let className = "";
 
   let node: HTMLAnchorElement | HTMLButtonElement;
 
@@ -29,6 +29,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
   this={element}
   bind:this={node}

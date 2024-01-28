@@ -25,7 +25,7 @@
     "@vitest/coverage-v8": "^0.34.6",
     "@vitest/ui": "^0.34.6",
     "eslint": "^8.44.0",
-    "eslint-plugin-svelte": "^2.30.0",
+    "eslint-plugin-svelte": "^2.35.1",
     "jsdom": "^22.1.0",
     "sass": "^1.63.6",
     "svelte": "^4.0.0",
