@@ -12,7 +12,7 @@
     "test": "vitest run --reporter verbose",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage --reporter=json ",
-    "gen_coverage_report":"vitest run --coverage.enabled --coverage.reporter=json-summary"
+    "gen_coverage_report": "vitest run --coverage.enabled --coverage.reporter=xml"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -35,5 +35,8 @@
     "typescript": "^5.0.0",
     "vite": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "xml": "^1.0.1"
+  }
 }
