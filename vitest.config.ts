@@ -13,7 +13,14 @@ export default defineConfig({
 
     coverage:{
       enabled:true,
-      exclude:['src/setupTest.ts']
+      provider: 'v8', 
+      exclude:['src/setupTest.ts'],
+      reporter:[
+        'json',
+        'json-summary',
+        'html',
+        'lcov'
+      ]
     }
   },
 })

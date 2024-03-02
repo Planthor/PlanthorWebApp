@@ -2,6 +2,7 @@
   "name": "planthor-clientfrontendwebapp",
   "version": "0.0.1",
   "scripts": {
+    "prepare": "svelte-kit sync",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
@@ -11,8 +12,7 @@
     "build_lint": "vite build && eslint .",
     "test": "vitest run --reporter verbose",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage --reporter=json ",
-    "gen_coverage_report":"vitest run --coverage.enabled --coverage.reporter=json-summary"
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
