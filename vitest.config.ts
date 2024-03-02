@@ -16,8 +16,9 @@ export default defineConfig({
       provider: 'v8', 
       exclude:['src/setupTest.ts'],
       reporter:[
-        ['lcov', { 'projectRoot': './src' }],
-        ['json', { 'file': 'coverage.json' }]
+        ['lcov'],
+        ['json'],
+        ['html']
       ]
     }
   },
