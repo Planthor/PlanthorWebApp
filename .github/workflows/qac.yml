@@ -28,15 +28,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-Nodejs
       
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
-      
-      - name: Run coverage
-        if: always()
-        run: |
-          npm run coverage 
+      - name: Vitest Coverage Report
+        uses: davelosert/vitest-coverage-report-action@v2.3.0
+        with:
+          github-token: ${{ github.token }}
+          # vite-config-path: # optional
+          # json-summary-path: # optional, default is coverage/coverage-summary.json
+          # json-summary-compare-path: # optional
+          # json-final-path: # optional, default is coverage/coverage-final.json
+          # file-coverage-mode: # optional, default is changes
+          # working-directory: # optional, default is ./
+          name: Run coverage test
+                
       
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
