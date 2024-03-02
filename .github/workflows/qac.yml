@@ -39,7 +39,7 @@ jobs:
         run: |
           npm run coverage 
 
-      - name: 'Report Coverage'
+      - name: Report Coverage
         if: always() 
         uses: davelosert/vitest-coverage-report-action@v2.3.0
         with:
