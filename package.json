@@ -11,8 +11,8 @@
     "build_lint": "vite build && eslint .",
     "test": "vitest run --reporter verbose",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage --reporter=json "
- },
+    "coverage": "vitest run --coverage"
+  },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
@@ -34,8 +34,5 @@
     "typescript": "^5.0.0",
     "vite": "^4.0.0"
   },
-  "type": "module",
-  "dependencies": {
-    "xml": "^1.0.1"
-  }
+  "type": "module"
 }

@@ -95,4 +95,4 @@ jobs:
             -Dsonar.projectKey=Planthor_Planthor_ClientFrontEndWebApp
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
-            # -Dsonar.coverageReportPaths=./coverage/clover.xml
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/lcov.info
