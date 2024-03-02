@@ -73,7 +73,7 @@ jobs:
           SONAR_HOST_URL: https://sonarcloud.io
         with:
           args:
-            -Dsonar.projectKey=Planthor_ClientFrontEndWebApp
+            -Dsonar.projectKey=Planthor_Planthor_ClientFrontEndWebApp
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.coverageReportPaths=./coverage/clover.xml
