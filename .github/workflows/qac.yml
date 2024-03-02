@@ -111,4 +111,4 @@ jobs:
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.exclusions=./coverage-report
+            -Dsonar.exclusions=**/coverage-report/**/*
