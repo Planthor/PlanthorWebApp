@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "planthor",
+        "projectKey": "Planthor_Planthor_ClientFrontEndWebApp"
+    }
+}
