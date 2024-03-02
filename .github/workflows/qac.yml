@@ -14,11 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
 
       - name: Cache node_modules
         uses: actions/cache@v4
@@ -31,15 +26,7 @@ jobs:
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.3.0
         with:
-          github-token: ${{ github.token }}
-          # vite-config-path: # optional
-          # json-summary-path: # optional, default is coverage/coverage-summary.json
-          # json-summary-compare-path: # optional
-          # json-final-path: # optional, default is coverage/coverage-final.json
-          # file-coverage-mode: # optional, default is changes
-          # working-directory: # optional, default is ./
-          name: Run coverage test
-                
+          github-token: ${{ github.token }}                
       
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
