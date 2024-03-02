@@ -63,8 +63,10 @@ jobs:
       - name: Cache SonarScanner
         uses: actions/cache@v4
         with:
-          path: ~/.sonar/cache
+          path: /opt/sonar-scanner/.sonar/cache
           key: ${{ runner.os }}-sonar-${{ hashFiles('./.github/workflows/qac.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-sonar-
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

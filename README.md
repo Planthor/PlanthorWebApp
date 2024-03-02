@@ -1,4 +1,15 @@
-# create-svelte
+# Planthor_ClientFrontEndWebApp
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
