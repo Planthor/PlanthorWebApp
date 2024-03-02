@@ -16,9 +16,10 @@ export default defineConfig({
       provider: 'v8', 
       exclude:['src/setupTest.ts'],
       reporter:[
-        ['lcov'],
-        ['json'],
-        ['html']
+        'json',
+        'json-summary',
+        'html',
+        'lcov'
       ]
     }
   },
