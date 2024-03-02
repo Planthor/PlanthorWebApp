@@ -76,4 +76,4 @@ jobs:
             -Dsonar.projectKey=Planthor_ClientFrontEndWebApp
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
-            sonar.coverageReportPaths=./coverage/clover.xml
+            -Dsonar.coverageReportPaths=./coverage/clover.xml
