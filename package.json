@@ -2,6 +2,7 @@
   "name": "planthor-clientfrontendwebapp",
   "version": "0.0.1",
   "scripts": {
+    "prepare": "svelte-kit sync",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
