@@ -28,13 +28,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-Nodejs
       
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
       
       - name: Run coverage
         if: always()
         run: |
-          npm run build
           npm run coverage 
       
       - name: Upload coverage report
@@ -76,4 +78,4 @@ jobs:
             -Dsonar.projectKey=Planthor_Planthor_ClientFrontEndWebApp
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
-            -Dsonar.coverageReportPaths=./coverage/clover.xml
+            # -Dsonar.coverageReportPaths=./coverage/clover.xml
