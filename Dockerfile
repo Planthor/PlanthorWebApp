@@ -1,9 +1,13 @@
-FROM node:18-alpine AS external-website
+FROM node:18-alpine AS build
 LABEL Developers="@akakshuki and Planthor team"
 WORKDIR /app
 COPY . .
 RUN npm ci
 RUN npm run build_node
-RUN rm -rf src/ static/ .devcontainer/ svelte.config.js tsconfig.json
-EXPOSE 3000
+
+FROM node:18-alpine
+WORKDIR /app
+COPY package.json ./
+COPY --from=build /app/build/ /app/build
+COPY --from=build /app/node_modules/ /app/node_modules
 ENTRYPOINT ["node","build/index.js"]
