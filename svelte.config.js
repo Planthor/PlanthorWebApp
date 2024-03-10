@@ -1,4 +1,5 @@
 import preprocess from "svelte-preprocess";
+
 import adapterVercel from "@sveltejs/adapter-vercel";
 import adapterNode from "@sveltejs/adapter-node";
 import dotenv from 'dotenv'
