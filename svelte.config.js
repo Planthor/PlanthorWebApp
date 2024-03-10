@@ -1,5 +1,17 @@
-import adapter from "@sveltejs/adapter-auto";
 import preprocess from "svelte-preprocess";
+
+import adapterVercel from "@sveltejs/adapter-vercel";
+import adapterNode from "@sveltejs/adapter-node";
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+let adapter_selector;
+if (process.env.SVELTE_ADAPTER === 'node') {
+  adapter_selector = adapterNode();
+} else {
+  adapter_selector = adapterVercel();
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,7 +24,7 @@ const config = {
   }),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter_selector,
     alias: {
       $components: "src/lib/components",
     },
