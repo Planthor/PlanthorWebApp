@@ -45,15 +45,3 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-
-## Work with Identity Server
-
-- For run with docker-compose
-- Generate self-certificates from ./infrastructure/certificates.
-- Use Docker compose file in ./infrastructure folder.
-- For seeding data base need to `exec` to Identity container execute 
-
-```bash
-dotnet Planthor.IdentityServerAspNetIdentity.dll /seed  
-```
