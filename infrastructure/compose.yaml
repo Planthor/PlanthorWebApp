@@ -1,0 +1,45 @@
+version: '3.8'
+name: planthor-identity-infrastructure
+
+services:
+
+  postgresql:
+    image: postgres:16
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: planthor-admin
+      POSTGRES_PASSWORD: Planthor@123
+      POSTGRES_DB: PLANTHOR_IDENTITY
+    volumes:
+      - local-pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: planthor-admin@planthor.com
+      PGADMIN_DEFAULT_PASSWORD: Planthor@123
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+  identity:
+    image: planthordev/identityserver:testcandidates-20240306170403
+    ports:
+      - "5001:5001"
+    environment:
+      ASPNETCORE_HTTPS_PORTS: 5001
+      ASPNETCORE_URLS: https://*:5001
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Password: Planthor@123
+      ASPNETCORE_Kestrel__Certificates__Default__Path: certificates/certificate.p12
+      ConnectionStrings__DefaultConnection: HOST=postgresql:5432;Username=planthor-admin;Password=Planthor@123;Database=PLANTHOR_IDENTITY
+    volumes:
+      - ./certificates:/app/certificates
+
+volumes:
+  local-pgdata:
+  pgadmin-data:
