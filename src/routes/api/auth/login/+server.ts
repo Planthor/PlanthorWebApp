@@ -18,6 +18,6 @@ const state = generateRandomString(16);
 const challenge = pkce.create();
 
 export const GET: RequestHandler= ({cookies})=>{
-  throw redirect(307,"")
+  throw redirect(307,"https://localhost:5001/Account/Login")
 
 }
