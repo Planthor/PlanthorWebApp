@@ -3,8 +3,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
@@ -47,3 +45,15 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+## Work with Identity Server
+
+- For run with docker-compose
+- Generate self-certificates from ./infrastructure/certificates.
+- Use Docker compose file in ./infrastructure folder.
+- For seeding data base need to `exec` to Identity container execute 
+
+```bash
+dotnet Planthor.IdentityServerAspNetIdentity.dll /seed  
+```
