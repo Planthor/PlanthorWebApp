@@ -1,3 +1,4 @@
+import { BASE_URL } from "$env/static/private";
 import { redirect, type RequestHandler } from "@sveltejs/kit";
 import pkce from "pkce-gen";
 
@@ -14,10 +15,22 @@ const generateRandomString = (length: number) => {
   return randomString;
 };
 
-const state = generateRandomString(16);
+const state = '';
 const challenge = pkce.create();
+const scope = "openid";
 
-export const GET: RequestHandler= ({cookies})=>{
-  throw redirect(307,"https://localhost:5001/Account/Login")
-
-}
+export const GET: RequestHandler = ({ cookies }) => {
+  console.log(cookies);
+  throw redirect(
+    307,
+    `https://localhost:5001/connect/authorize?${new URLSearchParams({
+      response_type: "code",
+      client_id: "planthor-web",
+      scope,
+      redirect_uri: `${BASE_URL}/api/auth/callback`,
+      state,
+      code_challenge_method: "S256",
+      code_challenge: challenge.code_challenge,
+    })}`
+  );
+};
