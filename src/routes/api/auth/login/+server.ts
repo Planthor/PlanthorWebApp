@@ -15,17 +15,16 @@ const generateRandomString = (length: number) => {
   return randomString;
 };
 
-const state = '';
+const state = generateRandomString(16);
 const challenge = pkce.create();
 const scope = "openid";
 
 export const GET: RequestHandler = ({ cookies }) => {
-  console.log(cookies);
   throw redirect(
     307,
     `https://localhost:5001/connect/authorize?${new URLSearchParams({
       response_type: "code",
-      client_id: "planthor-web",
+      client_id: "planthor",
       scope,
       redirect_uri: `${BASE_URL}/api/auth/callback`,
       state,

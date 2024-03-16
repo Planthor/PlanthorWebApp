@@ -27,7 +27,7 @@ services:
       - pgadmin-data:/var/lib/pgadmin
 
   identity:
-    image: planthordev/identityserver:testcandidates-20240306170403
+    image: planthordev/identityserver:testcandidates-20240313161601
     ports:
       - "5001:5001"
     environment:
