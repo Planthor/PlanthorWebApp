@@ -6,7 +6,6 @@ export const GET: RequestHandler = async ({ url, cookies, fetch }) => {
   const code = url.searchParams.get("code") || null;
   const state = url.searchParams.get("state") || null;
 
-  console.log("cookies", cookies.get("planthor_auth_state"));
   const storedState = cookies.get("planthor_auth_state") || null;
   const storedChallengeVerifier =
     cookies.get("planthor_auth_challenge_verifier") || null;
