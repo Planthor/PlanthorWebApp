@@ -1,6 +1,7 @@
 import { BASE_URL } from "$env/static/private";
-import { redirect, type RequestHandler } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 import pkce from "pkce-gen";
+import type { RequestHandler } from "./$types";
 
 const generateRandomString = (length: number) => {
   let randomString = "";
@@ -18,8 +19,16 @@ const generateRandomString = (length: number) => {
 const state = generateRandomString(16);
 const challenge = pkce.create();
 const scope = "openid";
+const opts = { httpOnly: true, path: "/" };
 
 export const GET: RequestHandler = ({ cookies }) => {
+  cookies.set("planthor_auth_state", state, opts);
+  cookies.set(
+    "planthor_auth_challenge_verifier",
+    challenge.code_verifier,
+    opts
+  );
+
   throw redirect(
     307,
     `https://localhost:5001/connect/authorize?${new URLSearchParams({
