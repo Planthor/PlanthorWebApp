@@ -30,9 +30,15 @@ export const GET: RequestHandler = async ({ url, cookies, fetch }) => {
   });
 
   const responseJSON = await response.json();
-
+  console.log(responseJSON)
   if (responseJSON.error) {
     throw error(400, responseJSON.error_description);
   }
+
+  cookies.delete("planthor_auth_state", { path: "/" });
+  cookies.delete("planthor_auth_challenge_verifier", { path: "/" });
+  cookies.set("id_token", responseJSON.id_token, { path: "/" });
+  cookies.set("access_token", responseJSON.access_token, { path: "/" });
+
   throw redirect(301, "/");
 };
