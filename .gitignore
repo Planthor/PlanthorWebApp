@@ -122,7 +122,6 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -190,7 +189,6 @@ dist
 # gitignore template for the SvelteKit, frontend web component framework
 # website: https://kit.svelte.dev/
 
-.svelte-kit/
 package
 
 ### VisualStudioCode ###
@@ -314,7 +312,7 @@ fabric.properties
 .idea/**/markdown-navigator/
 
 # Cache file creation bug
-# See https://youtrack.jetbrains.com/issue/JBR-2257
+# See https://youtrack.jetbrains.com/issue/JBR-:qa2257
 .idea/$CACHE_FILE$
 
 # CodeStream plugin
@@ -359,3 +357,6 @@ $RECYCLE.BIN/
 *.der
 *.priv
 *.p12
+
+/.svelte-kit
+/build

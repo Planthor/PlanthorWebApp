@@ -35,7 +35,7 @@
         <a href="/about">About</a>
       </li>
       {#if !user}
-        <Button element="a" variant="basic" href="/login">Login</Button>
+        <Button element="a" variant="basic" href="/api/auth/login">Login</Button>
       {:else}
         <form
           method="POST"

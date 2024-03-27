@@ -1,5 +1,4 @@
 <script lang="ts">
-
   type Element = $$Generic<"button" | "a">;
 
   export let element: Element;
@@ -14,7 +13,7 @@
   }
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions --><svelte:element
+<svelte:element
   this={element}
   bind:this={node}
   class="button button-{variant} {className}"
