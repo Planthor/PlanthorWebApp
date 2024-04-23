@@ -1,6 +1,6 @@
 {
   "name": "planthor-clientfrontendwebapp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "prepare": "svelte-kit sync",
     "dev": "vite dev",
@@ -13,7 +13,11 @@
     "build_lint": "vite build && eslint .",
     "test": "vitest run --reporter verbose",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -31,6 +35,7 @@
     "eslint-plugin-svelte": "^2.35.1",
     "jsdom": "^22.1.0",
     "sass": "^1.63.6",
+    "standard-version": "^9.5.0",
     "svelte": "^4.0.0",
     "svelte-check": "^3.4.3",
     "svelte-preprocess": "^5.0.4",
@@ -40,7 +45,7 @@
   },
   "type": "module",
   "dependencies": {
-    "pkce-gen": "^1.1.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "pkce-gen": "^1.1.0"
   }
 }
