@@ -31,7 +31,7 @@ export default defineConfig({
         'src/hooks.server.ts',
         'setupTest.ts'
       ],
-      reporter: ["json", "html", "lcov", "text"],
+      reporter: ["json","json-summary", "html", "lcov", "text"],
 
     },
   },
