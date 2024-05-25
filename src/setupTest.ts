@@ -3,6 +3,7 @@
 import type { Navigation } from "@sveltejs/kit";
 import { readable, type Subscriber } from "svelte/store";
 import { vi } from "vitest";
+import "@testing-library/jest-dom/vitest";
 
 // Mock SvelteKit runtime module $app/environment
 vi.mock("$app/environment", () => ({
