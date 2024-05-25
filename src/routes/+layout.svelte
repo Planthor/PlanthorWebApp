@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import "../app.postcss";
-  import Header from "./Header.svelte";
+  import Header from "../lib/components/Header.svelte";
   import "./styles.scss";
   import "../styles/common.scss";
   import type { LayoutData } from "./$types";
