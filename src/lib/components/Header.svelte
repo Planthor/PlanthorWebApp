@@ -23,19 +23,18 @@
   </div>
   <nav>
     <ul>
-      <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === "/"}>
         <a href="/">Home</a>
       </li>
-      <li
-        aria-current={$page.url.pathname === "/products" ? "page" : undefined}
-      >
+      <li aria-current={$page.url.pathname === "/products"}>
         <a href="/products">Products</a>
       </li>
-      <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === "/about"}>
         <a href="/about">About</a>
       </li>
       {#if !user}
-        <Button element="a" variant="basic" href="/api/auth/login">Login</Button>
+        <Button element="a" variant="basic" href="/api/auth/login">Login</Button
+        >
       {:else}
         <form
           method="POST"
