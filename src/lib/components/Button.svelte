@@ -34,7 +34,7 @@
   }
 
   .btn-primary {
-    @apply text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+    @apply text-white bg-indigo-600 hover:bg-blue-500 focus:ring-indigo-500;
   }
 
   .btn-secondary {

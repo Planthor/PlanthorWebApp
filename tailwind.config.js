@@ -3,6 +3,7 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+
       colors: {
         'blue': {
           100: "#DAECFF",
@@ -12,8 +13,8 @@ export default {
           600: "#0072E5",
           900: "#003A75",
         }
-      }
-    },
+      },
+    }
   },
   plugins: [],
 }
