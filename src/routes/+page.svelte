@@ -4,5 +4,5 @@
 </svelte:head>
 
 <section>
-  <h1>Implementing Home Page ....</h1>
+  <h1 class="text-white">Implementing Home Page ....</h1>
 </section>

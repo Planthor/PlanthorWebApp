@@ -1,87 +1,51 @@
-<script lang="ts">
-  type Element = $$Generic<"button" | "a">;
-
-  export let element: Element;
-  export let variant: "basic" | "solid" | "outline" | "danger" | "fullwidth" =
-    "solid";
-  export let className = "";
-
-  let node: HTMLAnchorElement | HTMLButtonElement;
-
-  export function focus() {
-    node.focus();
-  }
+<script>
+  export let variant = "primary";
+  export let size = "base";
+  export let href = null;
 </script>
 
-<svelte:element
-  this={element}
-  bind:this={node}
-  class="button button-{variant} {className}"
-  on:click
-  {...$$restProps}
->
-  <slot />
-</svelte:element>
+<!-- Default Button -->
+{#if !href}
+  <button
+    class="btn {variant === 'primary' ? 'btn-primary' : ''} {variant ===
+    'secondary'
+      ? 'btn-secondary'
+      : ''} {size === 'sm' ? 'btn-sm' : ''} {size === 'lg' ? 'btn-lg' : ''}"
+    on:click
+  >
+    <slot />
+  </button>
+{:else}
+  <!-- Link Button -->
+  <a
+    {href}
+    class="btn {variant === 'primary' ? 'btn-primary' : ''} {variant ===
+    'secondary'
+      ? 'btn-secondary'
+      : ''} {size === 'sm' ? 'btn-sm' : ''} {size === 'lg' ? 'btn-lg' : ''}"
+  >
+    <slot />
+  </a>
+{/if}
 
-<style lang="scss">
-  .button {
-    display: inline-block;
-    border: none;
-    font-weight: 600;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    cursor: pointer;
-    padding: 7px 15px;
-    text-decoration: none;
+<style lang="postcss">
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
 
-    &.button-fullwidth {
-      background-color: $color-blue-500;
-      color: #fff;
-      width: 100%;
-    }
+  .btn-primary {
+    @apply text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+  }
 
-    &.button-basic {
-      background-color: $color-blue-500;
-      color: #fff;
-    }
-    &.button-solid {
-      background-color: var(--accent-color);
-      color: #000;
-      border: 2px solid var(--accent-color);
-    }
-    &.button-outline {
-      background: none;
-      color: var(--text-color);
-      border: 2px solid;
-    }
-    &.button-danger {
-      background-color: var(--error);
-      color: #fff;
-      border: 2px solid var(--error);
-    }
-    &:disabled {
-      opacity: 0.8;
-      cursor: not-allowed;
-    }
-    &:hover {
-      &.button-solid,
-      &.button-danger {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
-      }
-      &.button-outline {
-        background-image: linear-gradient(rgba(185, 185, 185, 0.071) 0 0);
-      }
-    }
-    &:active {
-      &.button-solid,
-      &.button-danger {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0 0);
-      }
-      &.button-outline {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
-      }
-    }
+  .btn-secondary {
+    @apply text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:ring-indigo-500;
+  }
+
+  .btn-sm {
+    @apply px-2 py-1 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
   }
 </style>
