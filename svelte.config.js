@@ -1,12 +1,12 @@
-import preprocess from "svelte-preprocess";
-import adapterVercel from "@sveltejs/adapter-vercel";
 import adapterNode from "@sveltejs/adapter-node";
-import dotenv from 'dotenv'
+import adapterVercel from "@sveltejs/adapter-vercel";
+import dotenv from "dotenv";
+import preprocess from "svelte-preprocess";
 
-dotenv.config()
+dotenv.config();
 
 let adapter_selector;
-if (process.env.SVELTE_ADAPTER === 'node') {
+if (process.env.SVELTE_ADAPTER === "node") {
   adapter_selector = adapterNode();
 } else {
   adapter_selector = adapterVercel();
