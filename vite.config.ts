@@ -21,18 +21,17 @@ export default defineConfig({
       enabled: true,
       provider: "v8",
       exclude: [
-        '**/node_modules/**',
-        '**/dist/**',
-        '**/build/**',
-        '**/svelte.config.js/**',
-        '**/.eslintrc.cjs/**',
-        '**/.{idea,git,cache,output,temp,svelte-kit}/**',
-        'src/routes/**',
-        'src/hooks.server.ts',
-        'setupTest.ts'
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/svelte.config.js/**",
+        "**/.eslintrc.cjs/**",
+        "**/.{idea,git,cache,output,temp,svelte-kit}/**",
+        "src/routes/**",
+        "src/hooks.server.ts",
+        "setupTest.ts",
       ],
-      reporter: ["json","json-summary", "html", "lcov", "text"],
-
+      reporter: ["json", "json-summary", "html", "lcov", "text"],
     },
   },
 });
