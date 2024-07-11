@@ -1,5 +1,6 @@
 import adapterNode from "@sveltejs/adapter-node";
 import adapterVercel from "@sveltejs/adapter-vercel";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import dotenv from "dotenv";
 import preprocess from "svelte-preprocess";
 
@@ -16,12 +17,7 @@ if (process.env.SVELTE_ADAPTER === "node") {
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: preprocess({
-    scss: {
-      prependData: '@use "src/styles/functions"; @import "src/styles/colors";',
-    },
-  }),
-
+  preprocess: vitePreprocess(),
   kit: {
     adapter: adapter_selector,
     alias: {

@@ -1,0 +1,23 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528 474" width="28" height="25">
+	<title>&lt;Group&gt;</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-351.233,158.286,-85.119,-188.877,542.682,107.544)">
+			<stop offset="0" stop-color="#590200"/>
+			<stop offset=".285" stop-color="#8f1818"/>
+			<stop offset=".898" stop-color="#b12424"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(245.504,-241.858,156.918,159.284,-67.169,105.615)">
+			<stop offset="0" stop-color="#4968b0"/>
+			<stop offset=".522" stop-color="#3270b7"/>
+			<stop offset="1" stop-color="#2281c4"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+	</style>
+	<g id="&lt;Group&gt;">
+		<path id="&lt;Path&gt;" class="s0" d="m411.2 100.2c9 0 16.3 7.3 16.3 16.3 0 9-7.3 16.3-16.3 16.3l-360-0.3q-2 0-3.8 0.1c-26.1 1.7-46.6 20-46.6 42.5v14c0 18.6 14.1 34.4 33.7 40.2 8.8 1.6 17.9 2.4 27.3 2.4h201.5v0.3h146.5c0.5 0 0.9 0 1.4 0 24.8 0 47.7-7.7 66.4-21 3.8-2.6 7.4-5.5 10.8-8.5v-0.1c41-108.2-77.2-102.2-77.2-102.2z"/>
+		<path id="&lt;Path&gt;" class="s1" d="m412.3 1c-0.9 0-1.7 0-2.5 0.1h-0.1c-2.5-0.1-5-0.2-7.5-0.2h-121.6c-63.8 0-115.5 51.7-115.5 115.5v307.6c0 27 19 49 42.6 49h14c18.6 0 34.4-13.7 40.2-32.8q2.4-12.8 2.4-26.5v-297.4c0-8.7 6.9-15.7 15.5-16.1h132.5c0 0 118.1-6 77.2 102.2 23.5-21.1 38.2-51.8 38.2-85.9 0-63.7-51.7-115.5-115.4-115.5z"/>
+	</g>
+</svg>
