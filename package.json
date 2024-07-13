@@ -20,7 +20,6 @@
     "release:major": "standard-version --release-as major"
   },
   "devDependencies": {
-    "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
     "@sveltejs/adapter-auto": "^3.1.1",
     "@sveltejs/adapter-node": "^5.0.1",
@@ -51,6 +50,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource/montserrat": "^5.0.18",
     "bits-ui": "^0.21.12",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",

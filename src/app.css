@@ -1,3 +1,10 @@
+@import "@fontsource/montserrat/300.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +26,7 @@
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
 
-    --primary: 0 0% 9%;
+    --primary: 204 74% 45%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96.1%;
@@ -73,6 +80,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground h-full;
   }
 }

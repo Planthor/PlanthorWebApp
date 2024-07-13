@@ -15,17 +15,14 @@
   <div class="app">
     <Header user={data.user} />
 
-    <main>
+    <main class="mx-auto w-[90%] h-screen">
       <slot />
     </main>
 
-    <footer>
-      <p>
-        visit <a
-          href="https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp"
-          >Planthor</a
-        > to Discover
-      </p>
+    <footer class="w-full bg-black">
+      <div class="h-12 mx-auto w-[90%] flex items-center">
+        <p class="text-white">Copyright @2024 Planthor</p>
+      </div>
     </footer>
   </div>
 {/if}

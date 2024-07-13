@@ -4,7 +4,7 @@
 </svelte:head>
 
 <section>
-  <h1 class="text-white">a</h1>
-  <h2>usser</h2>
-  <h1 class="text-white">a</h1>
+  <h1 class="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
+    Planthor
+  </h1>
 </section>
