@@ -15,11 +15,11 @@
   };
 </script>
 
-<header class="max-w-8xl bg-white">
-  <div class="flex w-[90%] justify-between mx-auto">
+<header class="max-w-8xl bg-white lg:border-b lg:border-slate-900/10">
+  <div class="flex w-[90%] justify-between mx-auto py-2">
     <a href="/" class="flex items-center justify-center">
       <img src={logo} alt="Planthor" class="w-auto object-contain h-8" />
-      <span class="ml-2 text-xl font-bold">Planthor</span>
+      <span class="ml-2 text-3xl font-bold">Planthor</span>
     </a>
     <nav class="hidden lg:flex content-between items-center gap-4 bg-white">
       <ul
