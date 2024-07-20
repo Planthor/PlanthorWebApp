@@ -3,6 +3,7 @@
   import { page } from "$app/stores";
   import logo from "$lib/images/planthor-logo.svg";
   import { Button } from "$lib/components/ui/button";
+  import "iconify-icon";
 
   type User = { name: string; id: number } | undefined;
   export let user: User;
@@ -15,7 +16,7 @@
   };
 </script>
 
-<header class="max-w-8xl bg-white lg:border-b lg:border-slate-900/10">
+<header class="max-w-8xl bg-white border-b lg:border-slate-900/10">
   <div class="flex w-[90%] justify-between mx-auto py-2">
     <a href="/" class="flex items-center justify-center">
       <img src={logo} alt="Planthor" class="w-auto object-contain h-8" />
@@ -48,6 +49,20 @@
         {/if}
       </div>
     </nav>
+    <button
+      type="button"
+      class="flex items-center justify-center lg:hidden"
+      on:click={() => {
+        console.log("here");
+      }}
+    >
+      <iconify-icon
+        icon="ci:hamburger-md"
+        style="font-size: 1rem;"
+        width="2rem"
+        height="2rem"
+      />
+    </button>
   </div>
 </header>
 
