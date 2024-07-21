@@ -12,20 +12,17 @@
 {/if}
 
 {#if $page.url.pathname !== "/login"}
-  <div class="app">
+  <div class="flex flex-col justify-between">
     <Header user={data.user} />
 
-    <main>
+    <main class="mx-auto w-[90%] max-h-full">
       <slot />
     </main>
 
-    <footer>
-      <p>
-        visit <a
-          href="https://github.com/Planthor-Team/Planthor_ClientFrontEndWebApp"
-          >Planthor</a
-        > to Discover
-      </p>
+    <footer class="w-full bg-black fixed bottom-0">
+      <div class="h-12 mx-auto w-[90%] flex items-center">
+        <p class="text-white">Copyright @2024 Planthor</p>
+      </div>
     </footer>
   </div>
 {/if}
