@@ -14,6 +14,8 @@
       invalidateAll();
     }
   };
+
+  let onMenu = "hidden";
 </script>
 
 <header class="max-w-8xl bg-white border-b lg:border-slate-900/10">
@@ -63,6 +65,13 @@
         height="2rem"
       />
     </button>
+    <nav
+      class="h-dvh bg-white fixed flex max-h-none right-0 items-center justify-end w-64 z-10"
+    >
+      <ul>
+        <li>a</li>
+      </ul>
+    </nav>
   </div>
 </header>
 
