@@ -12,19 +12,17 @@
 {/if}
 
 {#if $page.url.pathname !== "/login"}
-  <div class="flex flex-col justify-between">
-    <Header user={data.user} />
+  <Header user={data.user} />
 
-    <main class="mx-auto w-[90%] max-h-full">
-      <slot />
-    </main>
+  <main class="mx-auto w-[90%] max-h-full">
+    <slot />
+  </main>
 
-    <footer class="w-full bg-black fixed bottom-0">
-      <div class="h-12 mx-auto w-[90%] flex items-center">
-        <p class="text-white">Copyright @2024 Planthor</p>
-      </div>
-    </footer>
-  </div>
+  <footer class="w-full bg-black fixed bottom-0">
+    <div class="h-12 mx-auto w-[90%] flex items-center">
+      <p class="text-white">Copyright @2024 Planthor</p>
+    </div>
+  </footer>
 {/if}
 
 <svelte:head>
