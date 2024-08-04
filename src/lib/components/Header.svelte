@@ -59,6 +59,7 @@
       </div>
     </nav>
     <button
+      name="hamburger-menu-icon"
       type="button"
       class="flex items-center justify-center lg:hidden"
       on:click={toggleNav}
