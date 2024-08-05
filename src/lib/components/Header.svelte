@@ -29,7 +29,7 @@
 <header class="max-w-8xl bg-white border-b lg:border-slate-900/10">
   <div class="flex w-[90%] justify-between mx-auto lg:py-2 py-[2.125rem]">
     <a href="/" class="flex items-center justify-center">
-      <img src={logo} alt="Planthor" class="w-auto object-contain h-8" />
+      <img src={logo} alt="planthor-md-logo" class="w-auto object-contain h-8" />
       <span class="ml-2 text-3xl font-bold">Planthor</span>
     </a>
     <nav class="hidden lg:flex content-between items-center gap-4 bg-white">
@@ -96,7 +96,7 @@
           class="divide-y divide-slate-900/10 text-base leading-7 text-slate-900"
         >
           <div class="px-8 py-6">
-            <img src={logo} alt="Planthor" class="w-auto object-contain h-8" />
+            <img src={logo} alt="planthor-sm-logo" class="w-auto object-contain h-8" />
           </div>
           <div class="px-8 py-6">
             <div class="-my-2 items-start space-y-2">
