@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "svelte-kit sync",
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "export VERCEL_FORCE_NO_BUILD_CACHE=1 && vite build",
     "build:node": "export SVELTE_ADAPTER=node && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
