@@ -1,6 +1,7 @@
 import adapterNode from "@sveltejs/adapter-node";
 import adapterVercel from "@sveltejs/adapter-vercel";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import adapterNetlify from "@sveltejs/adapter-netlify"; 
 import dotenv from "dotenv";
 import preprocess from "svelte-preprocess";
 
@@ -9,6 +10,8 @@ dotenv.config();
 let adapter_selector;
 if (process.env.SVELTE_ADAPTER === "node") {
   adapter_selector = adapterNode();
+} else if ( process.env.SVELTE_ADAPTER === "netlify" ){
+  adapter_selector = adapterNetlify();
 } else {
   adapter_selector = adapterVercel();
 }

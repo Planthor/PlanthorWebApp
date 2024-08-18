@@ -6,6 +6,7 @@
     "dev": "vite dev",
     "build": "export VERCEL_FORCE_NO_BUILD_CACHE=1 && vite build",
     "build:node": "export SVELTE_ADAPTER=node && vite build",
+    "build:netlify": "export SVELTE_ADAPTER=netlify && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@neoconfetti/svelte": "^1.0.0",
     "@sveltejs/adapter-auto": "^3.1.1",
+    "@sveltejs/adapter-netlify": "^4.3.3",
     "@sveltejs/adapter-node": "^5.0.1",
     "@sveltejs/adapter-vercel": "^5.1.0",
     "@sveltejs/kit": "^2.5.3",
@@ -53,9 +55,9 @@
     "@fontsource-variable/montserrat": "^5.0.19",
     "@fontsource/montserrat": "^5.0.18",
     "bits-ui": "^0.21.12",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
     "iconify-icon": "^2.1.0",
-    "clsx": "^2.1.1",
     "pkce-gen": "^1.1.0",
     "tailwind-merge": "^2.4.0",
     "tailwind-variants": "^0.2.1"
