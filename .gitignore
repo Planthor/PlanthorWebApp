@@ -361,4 +361,6 @@ $RECYCLE.BIN/
 /.svelte-kit
 /build
 
+.netlify
+
 .vercel
