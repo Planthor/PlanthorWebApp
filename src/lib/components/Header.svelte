@@ -7,13 +7,6 @@
   type User = { name: string; id: number } | undefined;
   export let user: User;
 
-  const logout = async () => {
-    const response = await fetch("/api/logout", { method: "POST" });
-    if (response.ok) {
-      invalidateAll();
-    }
-  };
-
   let isNavOpen = false;
 
   const toggleNav = () => {
@@ -29,7 +22,11 @@
 <header class="max-w-8xl bg-white border-b lg:border-slate-900/10">
   <div class="flex w-[90%] justify-between mx-auto lg:py-2 py-[2.125rem]">
     <a href="/" class="flex items-center justify-center">
-      <img src={logo} alt="planthor-md-logo" class="w-auto object-contain h-8" />
+      <img
+        src={logo}
+        alt="planthor-md-logo"
+        class="w-auto object-contain h-8"
+      />
       <span class="ml-2 text-3xl font-bold">Planthor</span>
     </a>
     <nav class="hidden lg:flex content-between items-center gap-4 bg-white">
@@ -48,13 +45,9 @@
       </ul>
       <div>
         {#if !user}
-          <Button
-            on:click={() => {
-              goto("/api/auth/login");
-            }}>Login</Button
-          >
+          <Button>Login</Button>
         {:else}
-          <Button variant="secondary" on:click={logout}>Logout</Button>
+          <Button variant="secondary">Logout</Button>
         {/if}
       </div>
     </nav>
@@ -96,7 +89,11 @@
           class="divide-y divide-slate-900/10 text-base leading-7 text-slate-900"
         >
           <div class="px-8 py-6">
-            <img src={logo} alt="planthor-sm-logo" class="w-auto object-contain h-8" />
+            <img
+              src={logo}
+              alt="planthor-sm-logo"
+              class="w-auto object-contain h-8"
+            />
           </div>
           <div class="px-8 py-6">
             <div class="-my-2 items-start space-y-2">
@@ -119,21 +116,9 @@
           </div>
           <div class="px-8 py-6">
             {#if !user}
-              <a
-                class="w-full py-2 font-semibold"
-                href="/api/auth/login"
-                on:click={() => navigateAndClose("/api/auth/login")}
-              >
-                Sign in
-              </a>
+              <a class="w-full py-2 font-semibold" href="#"> Sign in </a>
             {:else}
-              <a
-                class="w-full py-2 font-semibold"
-                href="/api/logout"
-                on:click={() => navigateAndClose("/api/logout")}
-              >
-                Sign out</a
-              >
+              <a class="w-full py-2 font-semibold" href="#"> Sign out</a>
             {/if}
           </div>
         </nav>
