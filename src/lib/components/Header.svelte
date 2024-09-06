@@ -43,13 +43,13 @@
           </li>
         {/each}
       </ul>
-      <div>
-        {#if !user}
-          <Button>Login</Button>
-        {:else}
-          <Button variant="secondary">Logout</Button>
-        {/if}
-      </div>
+      <!-- <div> -->
+      <!--   {#if !user} -->
+      <!--     <Button>Login</Button> -->
+      <!--   {:else} -->
+      <!--     <Button variant="secondary">Logout</Button> -->
+      <!--   {/if} -->
+      <!-- </div> -->
     </nav>
     <button
       name="hamburger-menu-icon"
@@ -114,13 +114,13 @@
               </ul>
             </div>
           </div>
-          <div class="px-8 py-6">
-            {#if !user}
-              <a class="w-full py-2 font-semibold" href="#"> Sign in </a>
-            {:else}
-              <a class="w-full py-2 font-semibold" href="#"> Sign out</a>
-            {/if}
-          </div>
+          <!-- <div class="px-7 py-6"> -->
+          <!--   {#if !user} -->
+          <!--     <a class="w-full py-2 font-semibold" href="#"> Sign in </a> -->
+          <!--   {:else} -->
+          <!--     <a class="w-full py-2 font-semibold" href="#"> Sign out</a> -->
+          <!--   {/if} -->
+          <!-- </div> -->
         </nav>
       </div>
     </div>
