@@ -23,8 +23,5 @@
         scrambled it to make a type specimen book.
       </p>
     </div>
-    <div>
-      <Button>Sign In</Button>
-    </div>
   </div>
 </section>
