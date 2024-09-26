@@ -29,6 +29,7 @@ jobs:
         id: define_docker_image
         run: |
           echo "DOCKER_BUILD_CHECKS_ANNOTATIONS=true" >> $GITHUB_ENV
+          echo "DOCKER_BUILD_CHECKS_ANNOTATIONS=true" >> $GITHUB_ENV
           echo "DOCKER_BUILD_SUMMARY=true" >> $GITHUB_ENV
           DOCKER_TAG=""
           PUSH_ENABLED=false
