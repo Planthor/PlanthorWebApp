@@ -4,7 +4,8 @@ on:
   push:
     branches: ["main"]
     tags:
-      -"*"
+      - "[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+(-[a-zA-Z0-9]+)"
   pull_request:
     branches: ["main"]
     types:
@@ -22,6 +23,7 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v3
         with:
+
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
