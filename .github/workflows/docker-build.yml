@@ -34,16 +34,16 @@ jobs:
           PUSH_ENABLED=false
           if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
             DOCKER_TAG="latest"
-            echo DOCKER_IMAGE="ghcr.io/planthor/webapi:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
+            echo DOCKER_IMAGE="ghcr.io/planthor/planthorwebapp:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
             PUSH_ENABLED=true
           elif [[ $GITHUB_REF =~ ^refs/tags/* ]]; then
             DOCKER_TAG="${{  github.ref_name }}"
-            echo DOCKER_IMAGE="ghcr.io/planthor/webapi:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
+            echo DOCKER_IMAGE="ghcr.io/planthor/planthorwebapp:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
             PUSH_ENABLED=true
           else
             DOCKER_TAG="${{ github.head_ref }}"
             DOCKER_TAG=${DOCKER_TAG//\//-}
-            echo DOCKER_IMAGE="planthordev/webapi:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
+            echo DOCKER_IMAGE="planthordev/planthorwebapp:$DOCKER_TAG" >> "$GITHUB_OUTPUT"
           fi
           echo PUSH_ENABLED=$PUSH_ENABLED >> "$GITHUB_OUTPUT"
 
