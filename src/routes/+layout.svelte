@@ -2,9 +2,6 @@
   import { page } from "$app/stores";
   import Header from "../lib/components/Header.svelte";
   import "../app.css";
-  import type { LayoutData } from "./$types";
-
-  export let data: LayoutData;
 </script>
 
 {#if $page.url.pathname === "/login"}
@@ -12,9 +9,9 @@
 {/if}
 
 {#if $page.url.pathname !== "/login"}
-  <Header user={data.user} />
+  <Header />
 
-  <main class="mx-auto w-[90%] max-h-full">
+  <main class="mx-auto w-[90%] xl:w-[1250px] max-h-full">
     <slot />
   </main>
 
