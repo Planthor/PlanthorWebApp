@@ -79,7 +79,30 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground h-full;
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  flex-shrink: 0;
 }
