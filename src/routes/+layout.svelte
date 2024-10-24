@@ -13,7 +13,7 @@
   {#if $page.url.pathname !== "/login"}
     <Header />
 
-    <main class="content mx-auto w-[90%] xl:w-[1250px] max-h-full lg:h-full">
+    <main class="content mx-auto w-[90%] xl:w-[1250px] max-h-full lg:h-full pt-16">
       <slot />
     </main>
 
