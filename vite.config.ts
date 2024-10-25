@@ -29,6 +29,7 @@ export default defineConfig({
         "**/.eslintrc.cjs/**",
         "**/.{idea,git,cache,output,temp,svelte-kit}/**",
         "src/routes/**",
+        "src/routes/**.server.ts",
         "src/hooks.server.ts",
         "**/postcss.config.js/**",
         "**/tailwind.config.js/**",
