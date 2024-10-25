@@ -1,4 +1,4 @@
-import { goalDB, goalId, goalSchema } from "$components/goals";
+import { goalDB, goalId, goalSchema } from "$lib/goals";
 import { error, fail, redirect } from "@sveltejs/kit";
 import { message, superValidate } from "sveltekit-superforms";
 import { zod } from "sveltekit-superforms/adapters";
