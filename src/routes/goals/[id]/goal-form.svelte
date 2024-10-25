@@ -58,7 +58,6 @@
   });
 
   let selectedDueDate: DateValue | undefined;
-  let placeholder: DateValue = today(getLocalTimeZone());
 
   $: selectedDueDate = $formData.duedate
     ? parseDate($formData.duedate)
@@ -75,8 +74,6 @@
         value: $formData.goalunit,
       }
     : undefined;
-
-  $: console.log($message);
 </script>
 
 <SuperDebug data={$formData} />
@@ -117,9 +114,7 @@
           <Popover.Content class="w-auto p-0" side="top">
             <Calendar
               bind:value={selectedDueDate}
-              bind:placeholder
               minValue={new CalendarDate(1900, 1, 1)}
-              maxValue={today(getLocalTimeZone())}
               initialFocus
               onValueChange={(v) => {
                 if (v) {
@@ -131,7 +126,7 @@
             />
           </Popover.Content>
         </Popover.Root>
-        <input hidden value={$formData.duedate} name={attrs.name} />
+        <input hidden value={$formData.duedate} name={attrs.name} placeholder="DD/MM/YYYY"/>
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
@@ -154,7 +149,7 @@
             {/each}
           </Select.Content>
         </Select.Root>
-        <input hidden bind:value={$formData.goaltype} name={attrs.name} />
+        <input hidden bind:value={$formData.goaltype} name={attrs.name} placeholder="Select Goal Type"/>
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
