@@ -51,7 +51,7 @@
     },
   ];
 
-  const { form: formData, enhance } = form;
+  const { form: formData, message, enhance } = form;
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -59,6 +59,7 @@
 
   let selectedDueDate: DateValue | undefined;
   let placeholder: DateValue = today(getLocalTimeZone());
+
   $: selectedDueDate = $formData.duedate
     ? parseDate($formData.duedate)
     : undefined;
@@ -74,12 +75,15 @@
         value: $formData.goalunit,
       }
     : undefined;
+
+  $: console.log($message);
 </script>
 
 <SuperDebug data={$formData} />
 
 <form method="POST" use:enhance>
-  <input type="hidden" name="id" bind:value={$formData.goalId} />
+  <input type="hidden" name="goalId" bind:value={$formData.goalId} />
+
   <Form.Field {form} name="goalname">
     <Form.Control let:attrs>
       <Form.Label>Goal Name *</Form.Label>

@@ -23,6 +23,7 @@ export const actions: Actions = {
   default: async ({ request }) => {
     const formData = await request.formData()
     const form = await superValidate(formData, zod(crudSchema));
+
     if (!form.valid) {
       return fail(400, { form })
     }
@@ -33,11 +34,10 @@ export const actions: Actions = {
       return message(form, "Goal created");
     } else {
       const index = goalDB.findIndex((goal) => goal.goalId === form.data.goalId);
-      console.log(index)
       if (index == -1) throw error(404, "Goal not found.")
 
       if (formData.has("delete")) {
-        goalDB.slice(index, 1)
+        goalDB.splice(index, 1)
         throw redirect(303, '/goals')
       } else {
         goalDB[index] = { ...form.data, goalId: form.data.goalId }
