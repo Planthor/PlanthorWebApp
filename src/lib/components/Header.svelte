@@ -3,9 +3,6 @@
   import logo from "$lib/images/planthor-logo.svg";
   import "iconify-icon";
 
-  type User = { name: string; id: number } | undefined;
-  export let user: User;
-
   let isNavOpen = false;
 
   const toggleNav = () => {
@@ -19,7 +16,9 @@
 </script>
 
 <header class="max-w-8xl bg-white border-b lg:border-slate-900/10">
-  <div class="flex w-[90%] justify-between mx-auto lg:py-2 py-[2.125rem]">
+  <div
+    class="flex w-[90%] xl:w-[1250px] justify-between mx-auto lg:py-2 py-[2.125rem]"
+  >
     <a href="/" class="flex items-center justify-center">
       <img
         src={logo}

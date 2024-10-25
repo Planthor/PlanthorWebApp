@@ -1,7 +1,3 @@
-<script lang="ts">
-  import { Button } from "$lib/components/ui/button";
-</script>
-
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Svelte demo app" />
@@ -11,7 +7,7 @@
   <div class="w-80 absolute top-60 flex flex-col gap-4">
     <div>
       <h1
-        class="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mb-4
+        class="scroll-m-19 text-4xl font-bold tracking-tight lg:text-5xl mb-4
       "
       >
         Planthor Homepage
