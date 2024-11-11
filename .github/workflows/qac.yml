@@ -99,6 +99,11 @@ jobs:
           name: coverage-report
           path: ./coverage-report
 
+      - name: Check current coverage reports
+        run: |
+          ls -la .
+          ls -la ./coverage-report
+
       - name: Analyze with SonarQube
         uses: SonarSource/sonarcloud-github-action@v2.1.1
         env:
