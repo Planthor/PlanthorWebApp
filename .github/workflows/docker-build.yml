@@ -1,4 +1,4 @@
-name: Docker CI workflow 
+name: Docker CI workflow
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
 
   docker-build:
     runs-on: ubuntu-latest
-    name: Run docker build  
+    name: Run docker build
     steps:
       - uses: actions/checkout@v4
 
@@ -59,7 +59,7 @@ jobs:
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v6
-        with:      
+        with:
           file: ./Dockerfile
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
