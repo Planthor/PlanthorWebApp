@@ -7,8 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-
-  coverage:
+  QAC:
     name: Run Coverage
     runs-on: ubuntu-22.04
     steps:
@@ -34,7 +33,7 @@ jobs:
           npm run prepare
           npm run build
 
-      - name: Install dependencies and build
+      - name: Run lint
         run: |
           npm run lint
 
