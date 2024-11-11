@@ -8,7 +8,7 @@ on:
 
 jobs:
   QAC:
-    name: Run Coverage
+    name: Run QAC
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
@@ -57,7 +57,7 @@ jobs:
   sonar-scan:
     name: Run SonarScanner
     runs-on: ubuntu-22.04
-    needs: [ coverage ]
+    needs: [ QAC ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
