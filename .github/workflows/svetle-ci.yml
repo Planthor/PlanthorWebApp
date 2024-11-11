@@ -3,7 +3,7 @@ name: Svelte CI
 on:
   push:
     branches:
-      - main 
+      - main
   pull_request:
     branches:
       - main
@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 18
- 
+
     - name: Install dependencies and build
       run: |
         npm install

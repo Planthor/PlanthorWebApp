@@ -1,8 +1,8 @@
 FROM node:alpine3.18 AS build
 WORKDIR /app
 COPY . .
-RUN npm install --ignore-scripts
-RUN npm run build:node
+RUN npm install --ignore-scripts && \
+    npm run build:node
 
 FROM node:alpine3.18
 LABEL Developers="@akakshuki and Planthor team"
