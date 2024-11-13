@@ -1,13 +1,16 @@
 # Planthor_ClientFrontEndWebApp
 
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2c9ec9a6-d259-490c-ab92-8f37f8884fe4/deploy-status)](https://app.netlify.com/sites/planthorwebapp/deploys)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
+[![Svelte CI](https://github.com/Planthor/PlanthorWebApp/actions/workflows/svetle-ci.yml/badge.svg?branch=main)](https://github.com/Planthor/PlanthorWebApp/actions/workflows/svetle-ci.yml)
 
 ## create-svelte
 
