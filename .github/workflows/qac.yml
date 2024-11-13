@@ -81,6 +81,6 @@ jobs:
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.sources=.
-            # -Dsonar.exclusions=node_modules/**,coverage-report/**
+            -Dsonar.exclusions=node_modules/**,coverage-report/**
             -Dsonar.javascript.lcov.reportPaths=coverage-report/lcov.info
             -Dsonar.typescript.tsconfigPaths=tsconfig.json
