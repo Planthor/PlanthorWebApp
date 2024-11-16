@@ -13,12 +13,11 @@
     DateFormatter,
     getLocalTimeZone,
     parseDate,
-    today,
     type DateValue,
   } from "@internationalized/date";
   import CalendarIcon from "lucide-svelte/icons/calendar";
   import { toast } from "svelte-sonner";
-  import SuperDebug, { superForm } from "sveltekit-superforms";
+  import { superForm } from "sveltekit-superforms";
 
   export let data;
 
@@ -76,11 +75,8 @@
     : undefined;
 </script>
 
-<SuperDebug data={$formData} />
-
-<form method="POST" use:enhance>
+<form method="POST" use:enhance class="form-with-gap">
   <input type="hidden" name="goalId" bind:value={$formData.goalId} />
-
   <Form.Field {form} name="goalname">
     <Form.Control let:attrs>
       <Form.Label>Goal Name *</Form.Label>
@@ -93,7 +89,7 @@
     <Form.FieldErrors />
   </Form.Field>
 
-  <div class="md:flex items-center justify-between gap-x-4">
+  <div class="md:flex gap-x-4">
     <Form.Field {form} name="duedate" class="flex flex-col">
       <Form.Control let:attrs>
         <Form.Label>Due Date *</Form.Label>
@@ -102,7 +98,7 @@
             {...attrs}
             class={cn(
               buttonVariants({ variant: "outline" }),
-              "lg:w-[280px] justify-start pl-4 text-left font-normal w-auto",
+              "lg:w-[380px] justify-start pl-4 text-left font-normal w-auto",
               !selectedDueDate && "text-muted-foreground",
             )}
           >
@@ -126,7 +122,12 @@
             />
           </Popover.Content>
         </Popover.Root>
-        <input hidden value={$formData.duedate} name={attrs.name} placeholder="DD/MM/YYYY"/>
+        <input
+          hidden
+          value={$formData.duedate}
+          name={attrs.name}
+          placeholder="DD/MM/YYYY"
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
@@ -149,7 +150,12 @@
             {/each}
           </Select.Content>
         </Select.Root>
-        <input hidden bind:value={$formData.goaltype} name={attrs.name} placeholder="Select Goal Type"/>
+        <input
+          hidden
+          bind:value={$formData.goaltype}
+          name={attrs.name}
+          placeholder="Select Goal Type"
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
@@ -233,3 +239,10 @@
     </div>
   </div>
 </form>
+<style lang="postcss">
+ .form-with-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

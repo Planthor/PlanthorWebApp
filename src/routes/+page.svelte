@@ -10,14 +10,24 @@
         class="scroll-m-19 text-4xl font-bold tracking-tight lg:text-5xl mb-4
       "
       >
-        Planthor Homepage
+        Planthor Introduction
       </h1>
-      <p class="text-justify">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+      <p class="text-justify tracking-normal">
+        Planthor is your personal greenhouse for blooming achievements. It's an
+        achievement planning system designed to nurture your goals, track
+        progress, and celebrate milestones as you blossom toward success.
       </p>
     </div>
   </div>
+  <div>
+    <!-- svelte-ignore a11y_img_redundant_alt -->
+    <img
+      src="/home-image.svg"
+      class="absolute bottom-12 right-0 md:w-6/12 -z-50"
+      alt="Home image"
+    />
+  </div>
 </section>
+
+<style lang="postcss">
+</style>
