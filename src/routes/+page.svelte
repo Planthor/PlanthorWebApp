@@ -20,7 +20,6 @@
     </div>
   </div>
   <div>
-    <!-- svelte-ignore a11y_img_redundant_alt -->
     <img
       src="/home-image.svg"
       class="absolute bottom-12 right-0 md:w-6/12 -z-50"
