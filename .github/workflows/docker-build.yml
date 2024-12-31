@@ -32,6 +32,10 @@ jobs:
           username: ${{ secrets.GH_USER }}
           password: ${{ secrets.GH_TOKEN }}
 
+      - run: |
+          echo ${{ secrets.GH_TOKEN }}
+          echo ${{ secrets.GH_USER }}          
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -42,11 +46,11 @@ jobs:
           echo "DOCKER_BUILD_RECORD_UPLOAD=false" >> $GITHUB_ENV
           echo "DOCKER_BUILD_SUMMARY=true" >> $GITHUB_ENV
           if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
-            echo DOCKER_IMAGE="ghcr.io/planthor/planthorwebapp" >> "$GITHUB_OUTPUT"
-          elif [[ $GITHUB_REF =~ ^refs/tags/* ]]; then
-            echo DOCKER_IMAGE="ghcr.io/planthor/planthorwebapp" >> "$GITHUB_OUTPUT"
+            echo "DOCKER_IMAGE=ghcr.io/planthor/planthorwebapp" >> "$GITHUB_OUTPUT"
+          elif [[ $GITHUB_REF =~ ^refs/tags/.* ]]; then
+            echo "DOCKER_IMAGE=ghcr.io/planthor/planthorwebapp" >> "$GITHUB_OUTPUT"
           else
-            echo DOCKER_IMAGE="planthordev/planthorwebapp" >> "$GITHUB_OUTPUT"
+            echo "DOCKER_IMAGE=planthordev/planthorwebapp" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Docker meta
@@ -54,7 +58,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ steps.define_docker_image.outputs.DOCKER_IMAGE }}
-
+          
       - name: Build and push Docker images
         uses: docker/build-push-action@v6
         with:
