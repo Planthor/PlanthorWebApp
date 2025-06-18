@@ -60,7 +60,7 @@ jobs:
           images: ${{ steps.define_docker_image.outputs.DOCKER_IMAGE }}
           
       - name: Build and push Docker images
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v6.6.0
         with:
           file: ./Dockerfile
           labels: ${{ steps.meta.outputs.labels }}
