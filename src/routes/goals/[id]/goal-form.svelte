@@ -48,6 +48,16 @@
       name: "Coding",
       value: "Coding",
     },
+    {
+      id: "04",
+      name: "Fitness",
+      value: "Fitness",
+    },
+    {
+      id: "05",
+      name: "Learning",
+      value: "Learning",
+    },
   ];
 
   const { form: formData, message, enhance } = form;
@@ -191,8 +201,13 @@
             <Select.Value placeholder="Select unit for your goal" />
           </Select.Trigger>
           <Select.Content>
+            <Select.Item value="books" label="books" />
+            <Select.Item value="sessions" label="sessions" />
             <Select.Item value="km" label="km" />
-            <Select.Item value="book" label="book" />
+            <Select.Item value="minutes" label="minutes" />
+            <Select.Item value="hours" label="hours" />
+            <Select.Item value="days" label="days" />
+            <Select.Item value="pages" label="pages" />
           </Select.Content>
         </Select.Root>
         <input hidden bind:value={$formData.goaltype} name={attrs.name} />

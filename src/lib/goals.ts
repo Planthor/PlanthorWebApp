@@ -7,9 +7,9 @@ export const goalSchema = z.object({
     .string()
     .refine((v) => v, { message: "A date of due date is required!" }),
   goaltype: z.string(),
-  goalcurrent: z.string().min(0, { message: "required" }).max(256),
-  goaltarget: z.string().min(0, { message: "required" }).max(256),
-  goalunit: z.string().min(2, { message: "required" }).max(256),
+  goalcurrent: z.string().min(0, { message: "Goal current is required" }).max(256),
+  goaltarget: z.string().min(0, { message: "Goal target is required" }).max(256),
+  goalunit: z.string().min(2, { message: "Goal unit is required" }).max(256),
   description: z.string().max(256),
 });
 
@@ -34,7 +34,7 @@ export const goalDB: goalDB = [
   {
     goalId: goalId(),
     goalname: "Go to the gym",
-    goaltype: "",
+    goaltype: "Fitness",
     goalcurrent: "",
     goaltarget: "",
     goalunit: "sessions",
