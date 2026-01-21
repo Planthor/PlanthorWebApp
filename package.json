@@ -59,7 +59,7 @@
     "@internationalized/date": "^3.5.5",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "formsnap": "^1.0.1",
     "iconify-icon": "^2.1.0",
     "mode-watcher": "^0.4.1",
