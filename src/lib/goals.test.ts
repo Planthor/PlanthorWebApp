@@ -10,9 +10,9 @@ describe("goalId", () => {
     expect(id.length).toBeGreaterThan(0);
   });
 
-  it("should generate a string of digits", () => {
+  it("should generate a valid UUID", () => {
     const id = goalId();
-    expect(id).toMatch(/^\d+$/);
+    expect(id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
   });
 
   it("should generate unique ids", () => {

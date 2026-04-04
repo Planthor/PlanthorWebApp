@@ -20,6 +20,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: "v8",
+      all: true,
       include: ["src/lib/**"],
       exclude: [
         "**/node_modules/**",
@@ -41,10 +42,7 @@ export default defineConfig({
         "src/lib/components/ui/popover/**",
         "src/lib/components/ui/select/**",
         "src/lib/components/ui/sonner/**",
-        "src/lib/components/ui/textarea/**",
         "src/lib/components/ui/form/**",
-        "src/lib/components/ui/input/**",
-        "src/lib/components/ui/label/**",
         // Barrel index files — just re-exports, no logic
         "**/ui/*/index.ts",
         "src/lib/components/index.ts",

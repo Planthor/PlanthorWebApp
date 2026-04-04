@@ -20,7 +20,7 @@ export const crudSchema = goalSchema.extend({
 export type Goal = z.infer<typeof goalSchema>;
 export type GoalDB = Goal[];
 
-export const goalId = () => String(Math.random()).slice(2);
+export const goalId = () => crypto.randomUUID();
 
 export const goalDB: GoalDB = [
   {
