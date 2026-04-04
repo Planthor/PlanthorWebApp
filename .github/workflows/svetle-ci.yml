@@ -30,6 +30,6 @@ jobs:
 
     - name: Install dependencies and build
       run: |
-        npm install
+        npm install --ignore-scripts
         npm run prepare
         npm run build

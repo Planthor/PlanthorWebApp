@@ -29,7 +29,7 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          npm install
+          npm install --ignore-scripts
           npm run prepare
           npm run build
 
@@ -44,7 +44,7 @@ jobs:
 
       - name: Report Coverage
         if: always()
-        uses: davelosert/vitest-coverage-report-action@v2.3.0
+        uses: davelosert/vitest-coverage-report-action@7cb62972347776255c2333807d26c60110c0df45
         with:
           github-token: ${{ github.token }}
 
@@ -68,7 +68,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: coverage-report
-          path: ./coverage-report
+          path: ./coverage
 
       - name: Analyze with SonarQube
         uses: SonarSource/sonarqube-scan-action@v4.2.1
@@ -81,6 +81,6 @@ jobs:
             -Dsonar.organization=planthor
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.sources=.
-            -Dsonar.exclusions=node_modules/**,coverage-report/**
-            -Dsonar.javascript.lcov.reportPaths=coverage-report/lcov.info
+            -Dsonar.exclusions=node_modules/**,coverage/**
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.typescript.tsconfigPaths=tsconfig.json
