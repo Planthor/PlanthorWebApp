@@ -11,7 +11,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, fireEvent } from "@testing-library/svelte";
 import Button from "./button.svelte";
 import { buttonVariants } from "./index";
-import { renderComponent, getRootElement, expectClasses } from "$lib/test-utils";
+import { renderComponent } from "$lib/test-utils";
 
 describe("Button", () => {
   // ─── renders ────────────────────────────────────────────────────────────────
@@ -24,7 +24,7 @@ describe("Button", () => {
 
   it("renders slot content", () => {
     // Note: to pass slot content use render directly (svelte testing limitation)
-    const { getByText } = render(Button, { props: {} });
+    render(Button, { props: {} });
     // Button renders; we can check the element itself
     expect(document.querySelector("button")).toBeInTheDocument();
   });

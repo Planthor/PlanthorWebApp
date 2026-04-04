@@ -7,7 +7,6 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { render } from "@testing-library/svelte";
 import Card from "./card.svelte";
 import CardHeader from "./card-header.svelte";
 import CardTitle from "./card-title.svelte";

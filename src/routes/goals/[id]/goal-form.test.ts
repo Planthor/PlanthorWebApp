@@ -1,6 +1,9 @@
 import { render } from "@testing-library/svelte";
 import GoalForm from './goal-form.svelte';
 import { vi, describe, it, expect } from 'vitest';
+import { superValidate } from 'sveltekit-superforms';
+import { zod } from 'sveltekit-superforms/adapters';
+import { crudSchema } from '$lib/goals';
 
 vi.mock('$app/navigation', () => ({
   goto: vi.fn(),
@@ -33,20 +36,23 @@ vi.mock('$app/stores', async () => {
 });
 
 describe('GoalForm', () => {
-  it('renders form with initial data', () => {
-    const { getByLabelText } = render(GoalForm, {
-      props: {
-        data: {
-          goalId: '1',
-          goalname: 'Test Goal',
-          duedate: '2023-12-31',
-          goaltype: 'Running',
-          goaltarget: '10',
-          goalcurrent: '5',
-          goalunit: 'km',
-          description: 'Test description',
-        },
+  it('renders form with initial data', async () => {
+    const formData = await superValidate(
+      {
+        goalId: '1',
+        goalname: 'Test Goal',
+        duedate: '2023-12-31',
+        goaltype: 'Running',
+        goaltarget: '10',
+        goalcurrent: '5',
+        goalunit: 'km',
+        description: 'Test description',
       },
+      zod(crudSchema)
+    );
+
+    const { getByLabelText } = render(GoalForm, {
+      props: { data: formData },
     });
 
     expect(getByLabelText('Goal Name *')).toHaveValue('Test Goal');

@@ -11,6 +11,7 @@
  */
 
 import { render } from "@testing-library/svelte";
+import { expect } from "vitest";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

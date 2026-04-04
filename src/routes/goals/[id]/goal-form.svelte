@@ -40,6 +40,8 @@
   });
 
   let selectedDueDate: DateValue | undefined;
+  let selectedGoalType: { label: string; value: string } | undefined;
+  let selectedUnit: { label: string; value: string } | undefined;
 
   $: selectedDueDate = $formData.duedate ? parseDate($formData.duedate) : undefined;
   $: selectedGoalType = $formData.goaltype ? { label: $formData.goaltype, value: $formData.goaltype } : undefined;

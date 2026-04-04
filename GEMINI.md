@@ -4,7 +4,7 @@
 
 **Planthor Client FrontEnd WebApp** is a SvelteKit-powered web application for managing personal goals. It serves as the frontend client in the Planthor ecosystem, integrating with an Identity Server for authentication.
 
-- **Framework:** SvelteKit (v4)
+- **Framework:** SvelteKit (v2) with Svelte (v5)
 - **Styling:** Tailwind CSS with PostCSS
 - **Language:** TypeScript
 - **State Management & Forms:** SvelteKit Superforms, Zod for validation
