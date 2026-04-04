@@ -33,3 +33,4 @@ This skill provides expert patterns for building modern web applications with Sv
 - [Routing Patterns](references/routing.md)
 - [Form & Validation Patterns](references/forms.md)
 - [UI Component Standards](references/ui-components.md)
+- [Coverage & Testing Guidelines](references/coverage-and-testing.md)

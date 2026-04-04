@@ -1,5 +1,5 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { svelteTesting } from "@testing-library/svelte/vite";
 
 export default defineConfig({
@@ -20,6 +20,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: "v8",
+      include: ["src/lib/**"],
       exclude: [
         "**/node_modules/**",
         "**/dist/**",
@@ -34,8 +35,29 @@ export default defineConfig({
         "**/postcss.config.js/**",
         "**/tailwind.config.js/**",
         "setupTest.ts",
+        "src/lib/images/**",
+        // UI primitives from shadcn-svelte — covered by their own upstream tests
+        "src/lib/components/ui/calendar/**",
+        "src/lib/components/ui/popover/**",
+        "src/lib/components/ui/select/**",
+        "src/lib/components/ui/sonner/**",
+        "src/lib/components/ui/textarea/**",
+        "src/lib/components/ui/form/**",
+        "src/lib/components/ui/input/**",
+        "src/lib/components/ui/label/**",
+        // Barrel index files — just re-exports, no logic
+        "**/ui/*/index.ts",
+        "src/lib/components/index.ts",
+        // Test infrastructure — not production code
+        "src/lib/test-utils.ts",
       ],
       reporter: ["json", "json-summary", "html", "lcov", "text"],
+      thresholds: {
+        statements: 80,
+        branches: 80,
+        functions: 80,
+        lines: 80,
+      },
     },
   },
 });
