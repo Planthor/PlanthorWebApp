@@ -5,12 +5,12 @@
   import "../app.css";
 </script>
 
-{#if $page.url.pathname === "/login"}
+{#if String($page.url.pathname) === "/login"}
   <div class="background login-wrapper"><slot /></div>
 {/if}
 
 <div class="container">
-  {#if $page.url.pathname !== "/login"}
+  {#if String($page.url.pathname) !== "/login"}
     <Header />
 
     <main class="content mx-auto w-[90%] xl:w-[1250px] max-h-full lg:h-full pt-16">

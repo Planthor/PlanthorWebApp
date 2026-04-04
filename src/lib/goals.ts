@@ -1,26 +1,28 @@
 import { z } from "zod";
 
 export const goalSchema = z.object({
-  goalId: z.string().regex(/^\d+$/),
+  goalId: z.string(),
   goalname: z.string().min(2, { message: "Goal name is required" }).max(256),
   duedate: z
     .string()
-    .refine((v) => v, { message: "A date of due date is required!" }),
-  goaltype: z.string(),
-  goalcurrent: z.string().min(0, { message: "Goal current is required" }).max(256),
-  goaltarget: z.string().min(0, { message: "Goal target is required" }).max(256),
-  goalunit: z.string().min(2, { message: "Goal unit is required" }).max(256),
-  description: z.string().max(256),
+    .min(1, { message: "A date of due date is required!" }),
+  goaltype: z.string().optional(),
+  goalcurrent: z.string().min(1, { message: "Goal current is required" }).max(256),
+  goaltarget: z.string().min(1, { message: "Goal target is required" }).max(256),
+  goalunit: z.string().min(1, { message: "Goal unit is required" }).max(256),
+  description: z.string().max(256).optional(),
 });
 
-export type goalDB = z.infer<typeof goalSchema>[];
+export const crudSchema = goalSchema.extend({
+  goalId: goalSchema.shape.goalId.optional()
+});
 
-// Set a global variable to preserve DB when Vite reloads.
-const g = globalThis as unknown as { goalDB: goalDB };
+export type Goal = z.infer<typeof goalSchema>;
+export type GoalDB = Goal[];
 
 export const goalId = () => String(Math.random()).slice(2);
 
-export const goalDB: goalDB = [
+export const goalDB: GoalDB = [
   {
     goalId: goalId(),
     goalname: "Read 10 books",
@@ -35,8 +37,8 @@ export const goalDB: goalDB = [
     goalId: goalId(),
     goalname: "Go to the gym",
     goaltype: "Fitness",
-    goalcurrent: "",
-    goaltarget: "",
+    goalcurrent: "0",
+    goaltarget: "52",
     goalunit: "sessions",
     description: "",
     duedate: "2025-12-08",

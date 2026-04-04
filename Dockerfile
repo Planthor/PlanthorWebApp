@@ -1,10 +1,10 @@
-FROM node:alpine3.18 AS build
+FROM node:alpine3.20 AS build
 WORKDIR /app
 COPY . .
 RUN npm install --ignore-scripts && \
     npm run build:node
 
-FROM node:alpine3.18
+FROM node:alpine3.20
 LABEL Developers="@akakshuki and Planthor team"
 WORKDIR /app
 COPY package.json ./

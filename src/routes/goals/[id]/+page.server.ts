@@ -1,48 +1,51 @@
-import { goalDB, goalId, goalSchema } from "$lib/goals";
+import { goalDB, goalId, crudSchema, type Goal } from "$lib/goals";
 import { error, fail, redirect } from "@sveltejs/kit";
 import { message, superValidate } from "sveltekit-superforms";
 import { zod } from "sveltekit-superforms/adapters";
-import type { Actions, PageServerLoad } from "../$types";
+import type { Actions, PageServerLoad } from "./$types";
 
-const crudSchema = goalSchema.extend({
-  goalId: goalSchema.shape.goalId.optional()
-});
-
-export const load: PageServerLoad = async ({ params }: any) => {
-
-  const goal = goalDB.find((goal) => goal.goalId === params.id);
-  if (params.id && !goal && params.id !== 'create') throw error(404, "Goal not found.")
+export const load: PageServerLoad = async ({ params }) => {
+  const goal = goalDB.find((g: Goal) => g.goalId === params.id);
+  
+  if (params.id && !goal && params.id !== 'create') {
+    throw error(404, "Goal not found.");
+  }
 
   return {
-    form: await superValidate(goal, zod(crudSchema)),
+    form: await superValidate(goal, zod(crudSchema as any)),
     goalDB
   };
 };
 
 export const actions: Actions = {
   default: async ({ request }) => {
-    const formData = await request.formData()
-    const form = await superValidate(formData, zod(crudSchema));
+    const formData = await request.formData();
+    const form = await superValidate(formData, zod(crudSchema as any));
 
     if (!form.valid) {
-      return fail(400, { form })
+      return fail(400, { form });
     }
 
-    if (!form.data.goalId) {
-      const goal = { ...form.data, goalId: goalId() }
-      goalDB.push(goal)
+    const { goalId: id } = form.data as Goal;
+
+    if (!id) {
+      // Create new goal
+      const newGoal = { ...form.data, goalId: goalId() };
+      goalDB.push(newGoal as Goal); // Use proper type
       return message(form, "Goal created");
     } else {
-      const index = goalDB.findIndex((goal) => goal.goalId === form.data.goalId);
-      if (index == -1) throw error(404, "Goal not found.")
+      const index = goalDB.findIndex((g: Goal) => g.goalId === id);
+      if (index === -1) {
+        throw error(404, "Goal not found.");
+      }
 
       if (formData.has("delete")) {
-        goalDB.splice(index, 1)
-        throw redirect(303, '/goals')
+        goalDB.splice(index, 1);
+        throw redirect(303, '/goals');
       } else {
-        goalDB[index] = { ...form.data, goalId: form.data.goalId }
-        return message(form, "Goal updated.")
+        goalDB[index] = { ...form.data, goalId: id } as Goal;
+        return message(form, "Goal updated.");
       }
     }
   }
-}
+};

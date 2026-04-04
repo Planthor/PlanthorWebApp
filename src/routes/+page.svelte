@@ -23,8 +23,9 @@
     <img
       src="/home-image.svg"
       class="absolute bottom-12 right-0 md:w-6/12 -z-50"
-      alt="Home image"
+      alt=""
     />
+
   </div>
 </section>
 
