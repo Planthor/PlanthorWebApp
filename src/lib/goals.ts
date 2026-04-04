@@ -22,7 +22,7 @@ export type GoalDB = Goal[];
 
 export const goalId = () => String(Math.random()).slice(2);
 
-export const goalDB: goalDB = [
+export const goalDB: GoalDB = [
   {
     goalId: goalId(),
     goalname: "Read 10 books",

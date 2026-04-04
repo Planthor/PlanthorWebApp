@@ -48,7 +48,7 @@ describe('GoalForm', () => {
         goalunit: 'km',
         description: 'Test description',
       },
-      zod(crudSchema)
+      zod(crudSchema as any)
     );
 
     const { getByLabelText } = render(GoalForm, {

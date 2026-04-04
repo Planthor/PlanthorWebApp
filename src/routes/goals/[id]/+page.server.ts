@@ -5,14 +5,14 @@ import { zod } from "sveltekit-superforms/adapters";
 import type { Actions, PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ params }) => {
-  const goal = goalDB.find((g) => g.goalId === params.id);
+  const goal = goalDB.find((g: Goal) => g.goalId === params.id);
   
   if (params.id && !goal && params.id !== 'create') {
     throw error(404, "Goal not found.");
   }
 
   return {
-    form: await superValidate(goal, zod(crudSchema)),
+    form: await superValidate(goal, zod(crudSchema as any)),
     goalDB
   };
 };
@@ -20,13 +20,13 @@ export const load: PageServerLoad = async ({ params }) => {
 export const actions: Actions = {
   default: async ({ request }) => {
     const formData = await request.formData();
-    const form = await superValidate(formData, zod(crudSchema));
+    const form = await superValidate(formData, zod(crudSchema as any));
 
     if (!form.valid) {
       return fail(400, { form });
     }
 
-    const { goalId: id } = form.data;
+    const { goalId: id } = form.data as Goal;
 
     if (!id) {
       // Create new goal
@@ -34,7 +34,7 @@ export const actions: Actions = {
       goalDB.push(newGoal as Goal); // Use proper type
       return message(form, "Goal created");
     } else {
-      const index = goalDB.findIndex((g) => g.goalId === id);
+      const index = goalDB.findIndex((g: Goal) => g.goalId === id);
       if (index === -1) {
         throw error(404, "Goal not found.");
       }
