@@ -1,4 +1,4 @@
-import { goalDB, goalId, crudSchema } from "$lib/goals";
+import { goalDB, goalId, crudSchema, type Goal } from "$lib/goals";
 import { error, fail, redirect } from "@sveltejs/kit";
 import { message, superValidate } from "sveltekit-superforms";
 import { zod } from "sveltekit-superforms/adapters";
@@ -31,7 +31,7 @@ export const actions: Actions = {
     if (!id) {
       // Create new goal
       const newGoal = { ...form.data, goalId: goalId() };
-      goalDB.push(newGoal as any); // Type cast due to mock DB structure
+      goalDB.push(newGoal as Goal); // Use proper type
       return message(form, "Goal created");
     } else {
       const index = goalDB.findIndex((g) => g.goalId === id);
@@ -43,7 +43,7 @@ export const actions: Actions = {
         goalDB.splice(index, 1);
         throw redirect(303, '/goals');
       } else {
-        goalDB[index] = { ...form.data, goalId: id } as any;
+        goalDB[index] = { ...form.data, goalId: id } as Goal;
         return message(form, "Goal updated.");
       }
     }

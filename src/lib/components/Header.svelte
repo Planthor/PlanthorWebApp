@@ -22,7 +22,7 @@
     <a href="/" class="flex items-center justify-center">
       <img
         src={logo}
-        alt="planthor-md-logo"
+        alt="Planthor Logo"
         class="w-auto object-contain h-8"
       />
       <span class="ml-2 text-3xl font-bold">Planthor</span>
@@ -47,13 +47,14 @@
       type="button"
       class="flex items-center justify-center lg:hidden"
       on:click={toggleNav}
+      aria-label="Open Menu"
     >
       <iconify-icon
         icon="ci:hamburger-md"
         style="font-size: 1rem;"
         width="2rem"
         height="2rem"
-      />
+      ></iconify-icon>
     </button>
   </div>
 </header>
@@ -73,8 +74,9 @@
           type="button"
           class="absolute right-6 top-5 flex h-8 w-8 items-center justify-center"
           on:click={toggleNav}
+          aria-label="Close Menu"
         >
-          <iconify-icon icon="ic:round-close" width="2rem" height="2rem" />
+          <iconify-icon icon="ic:round-close" width="2rem" height="2rem"></iconify-icon>
         </button>
         <nav
           class="divide-y divide-slate-900/10 text-base leading-7 text-slate-900"
@@ -82,7 +84,7 @@
           <div class="px-8 py-6">
             <img
               src={logo}
-              alt="planthor-sm-logo"
+              alt="Planthor Mobile Logo"
               class="w-auto object-contain h-8"
             />
           </div>
