@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [
     sveltekit(),
     svelteTesting({
-      autoCleanup: false,
-      resolveBrowser: false,
+      autoCleanup: true,
+      resolveBrowser: true,
     }),
   ],
 
