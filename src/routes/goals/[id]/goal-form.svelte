@@ -1,13 +1,14 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { Textarea } from "$components/ui/textarea";
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import * as Form from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import * as Select from "$lib/components/ui/select";
+  import { Textarea } from "$components/ui/textarea/index.js";
+  import { Button, buttonVariants } from "$components/ui/button/index.js";
+  import { Calendar } from "$components/ui/calendar/index.js";
+  import * as Form from "$components/ui/form/index.js";
+  import { Input } from "$components/ui/input/index.js";
+  import * as Popover from "$components/ui/popover/index.js";
+  import * as Select from "$components/ui/select/index.js";
   import { cn } from "$lib/utils.js";
+  import { GOAL_TYPES, GOAL_UNITS } from "$lib/constants";
   import {
     CalendarDate,
     DateFormatter,
@@ -25,42 +26,14 @@
     resetForm: true,
     onUpdated: ({ form: f }) => {
       if (f.valid) {
-        toast.success(`You submitted ${JSON.stringify(f.data, null, 2)}`);
+        toast.success(`Goal ${$formData.goalId ? "updated" : "created"} successfully!`);
       } else {
         toast.error("Please fix the errors in the form.");
       }
     },
   });
 
-  const GoalType = [
-    {
-      id: "01",
-      name: "Running",
-      value: "Running",
-    },
-    {
-      id: "02",
-      name: "Reading",
-      value: "Reading",
-    },
-    {
-      id: "03",
-      name: "Coding",
-      value: "Coding",
-    },
-    {
-      id: "04",
-      name: "Fitness",
-      value: "Fitness",
-    },
-    {
-      id: "05",
-      name: "Learning",
-      value: "Learning",
-    },
-  ];
-
-  const { form: formData, message, enhance } = form;
+  const { form: formData, enhance } = form;
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -68,38 +41,23 @@
 
   let selectedDueDate: DateValue | undefined;
 
-  $: selectedDueDate = $formData.duedate
-    ? parseDate($formData.duedate)
-    : undefined;
-  $: selectedGoalType = $formData.goaltype
-    ? {
-        label: $formData.goaltype,
-        value: $formData.goaltype,
-      }
-    : undefined;
-  $: selectedUnit = $formData.goalunit
-    ? {
-        label: $formData.goalunit,
-        value: $formData.goalunit,
-      }
-    : undefined;
+  $: selectedDueDate = $formData.duedate ? parseDate($formData.duedate) : undefined;
+  $: selectedGoalType = $formData.goaltype ? { label: $formData.goaltype, value: $formData.goaltype } : undefined;
+  $: selectedUnit = $formData.goalunit ? { label: $formData.goalunit, value: $formData.goalunit } : undefined;
 </script>
 
-<form method="POST" use:enhance class="form-with-gap">
+<form method="POST" use:enhance class="flex flex-col gap-4">
   <input type="hidden" name="goalId" bind:value={$formData.goalId} />
+  
   <Form.Field {form} name="goalname">
     <Form.Control let:attrs>
       <Form.Label>Goal Name *</Form.Label>
-      <Input
-        {...attrs}
-        bind:value={$formData.goalname}
-        placeholder="Goal Name"
-      />
+      <Input {...attrs} bind:value={$formData.goalname} placeholder="Goal Name" />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
-  <div class="md:flex gap-x-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <Form.Field {form} name="duedate" class="flex flex-col">
       <Form.Control let:attrs>
         <Form.Label>Due Date *</Form.Label>
@@ -108,13 +66,11 @@
             {...attrs}
             class={cn(
               buttonVariants({ variant: "outline" }),
-              "lg:w-[380px] justify-start pl-4 text-left font-normal w-auto",
+              "w-full justify-start text-left font-normal",
               !selectedDueDate && "text-muted-foreground",
             )}
           >
-            {selectedDueDate
-              ? df.format(selectedDueDate.toDate(getLocalTimeZone()))
-              : "DD/MM/YYYY"}
+            {selectedDueDate ? df.format(selectedDueDate.toDate(getLocalTimeZone())) : "DD/MM/YYYY"}
             <CalendarIcon class="ml-auto h-4 w-4 opacity-50" />
           </Popover.Trigger>
           <Popover.Content class="w-auto p-0" side="top">
@@ -123,56 +79,40 @@
               minValue={new CalendarDate(1900, 1, 1)}
               initialFocus
               onValueChange={(v) => {
-                if (v) {
-                  $formData.duedate = v.toString();
-                } else {
-                  $formData.duedate = "";
-                }
+                $formData.duedate = v ? v.toString() : "";
               }}
             />
           </Popover.Content>
         </Popover.Root>
-        <input
-          hidden
-          value={$formData.duedate}
-          name={attrs.name}
-          placeholder="DD/MM/YYYY"
-        />
+        <input hidden value={$formData.duedate} name={attrs.name} />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
 
-    <Form.Field {form} name="goaltype" class="flex flex-col w-full">
+    <Form.Field {form} name="goaltype" class="flex flex-col">
       <Form.Control let:attrs>
         <Form.Label>Goal Type</Form.Label>
         <Select.Root
           selected={selectedGoalType}
-          onSelectedChange={(v) => {
-            v && ($formData.goaltype = v.value);
-          }}
+          onSelectedChange={(v) => { v && ($formData.goaltype = v.value); }}
         >
           <Select.Trigger {...attrs}>
             <Select.Value placeholder="Select Goal Type" />
           </Select.Trigger>
           <Select.Content>
-            {#each GoalType as item}
+            {#each GOAL_TYPES as item}
               <Select.Item value={item.value} label={item.name} />
             {/each}
           </Select.Content>
         </Select.Root>
-        <input
-          hidden
-          bind:value={$formData.goaltype}
-          name={attrs.name}
-          placeholder="Select Goal Type"
-        />
+        <input hidden bind:value={$formData.goaltype} name={attrs.name} />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
   </div>
 
-  <div class="md:flex gap-x-4">
-    <Form.Field {form} name="goaltarget" class="md:w-full">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <Form.Field {form} name="goaltarget">
       <Form.Control let:attrs>
         <Form.Label>Goal Target *</Form.Label>
         <Input {...attrs} bind:value={$formData.goaltarget} />
@@ -180,7 +120,7 @@
       <Form.FieldErrors />
     </Form.Field>
 
-    <Form.Field {form} name="goalcurrent" class="md:w-full">
+    <Form.Field {form} name="goalcurrent">
       <Form.Control let:attrs>
         <Form.Label>Goal Current *</Form.Label>
         <Input {...attrs} bind:value={$formData.goalcurrent} />
@@ -188,29 +128,23 @@
       <Form.FieldErrors />
     </Form.Field>
 
-    <Form.Field {form} name="goalunit" class="md:w-full">
+    <Form.Field {form} name="goalunit">
       <Form.Control let:attrs>
-        <Form.Label>Goal Unit</Form.Label>
+        <Form.Label>Goal Unit *</Form.Label>
         <Select.Root
           selected={selectedUnit}
-          onSelectedChange={(v) => {
-            v && ($formData.goalunit = v.value);
-          }}
+          onSelectedChange={(v) => { v && ($formData.goalunit = v.value); }}
         >
           <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select unit for your goal" />
+            <Select.Value placeholder="Select Unit" />
           </Select.Trigger>
           <Select.Content>
-            <Select.Item value="books" label="books" />
-            <Select.Item value="sessions" label="sessions" />
-            <Select.Item value="km" label="km" />
-            <Select.Item value="minutes" label="minutes" />
-            <Select.Item value="hours" label="hours" />
-            <Select.Item value="days" label="days" />
-            <Select.Item value="pages" label="pages" />
+            {#each GOAL_UNITS as unit}
+              <Select.Item value={unit} label={unit} />
+            {/each}
           </Select.Content>
         </Select.Root>
-        <input hidden bind:value={$formData.goaltype} name={attrs.name} />
+        <input hidden bind:value={$formData.goalunit} name={attrs.name} />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
@@ -228,36 +162,21 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-  <div class="flex justify-end gap-y-4 space-x-4">
-    <div>
-      <Button
-        type="button"
-        variant="secondary"
-        on:click={() => {
-          goto("/goals");
-        }}>Back</Button
-      >
-    </div>
+
+  <div class="flex flex-col sm:flex-row justify-end gap-2 pt-4">
+    <Button variant="secondary" on:click={() => goto("/goals")}>Back</Button>
     {#if $formData.goalId}
       <Button
         type="submit"
         name="delete"
         variant="destructive"
-        on:click={(e) => !confirm("Are you sure?") && e.preventDefault()}
-        >Delete</Button
+        on:click={(e) => !confirm("Are you sure you want to delete this goal?") && e.preventDefault()}
       >
+        Delete
+      </Button>
     {/if}
-    <div>
-      <Button type="submit"
-        >{`${$formData.goalId ? "Update Goal" : "Create Goal"}`}</Button
-      >
-    </div>
+    <Button type="submit">
+      {$formData.goalId ? "Update Goal" : "Create Goal"}
+    </Button>
   </div>
 </form>
-<style lang="postcss">
- .form-with-gap {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style>

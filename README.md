@@ -1,64 +1,68 @@
-# Planthor_ClientFrontEndWebApp
+# Planthor Client FrontEnd WebApp
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Planthor_Planthor_ClientFrontEndWebApp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Planthor_Planthor_ClientFrontEndWebApp)
-[![Svelte CI](https://github.com/Planthor/PlanthorWebApp/actions/workflows/svetle-ci.yml/badge.svg?branch=main)](https://github.com/Planthor/PlanthorWebApp/actions/workflows/svetle-ci.yml)
+Planthor is a personal goal management system. This repository contains the SvelteKit-based frontend web application.
 
-## create-svelte
+## 🚀 Features
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- **Goal Management**: Create, view, update, and delete personal goals.
+- **Form Validation**: Robust client and server-side validation using SvelteKit Superforms and Zod.
+- **Modern UI**: Clean, responsive interface built with Tailwind CSS and modular UI components.
+- **Authentication**: Integrated with OAuth2/OIDC for secure user sessions.
 
-## Creating a project
+## 🛠️ Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework**: [SvelteKit](https://kit.svelte.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Validation**: [Zod](https://zod.dev/) & [Superforms](https://superforms.rocks/)
+- **Icons**: [Lucide Svelte](https://lucide.dev/guide/svelte)
+- **Testing**: [Vitest](https://vitest.dev/)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 🏃 Getting Started
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Prerequisites
 
-## Developing
+- Node.js (v18 or higher)
+- npm or pnpm
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the necessary configuration (see `.env.example` if available).
+
+### Running Locally
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+### Identity Server Integration
 
-To create a production version of your app:
+For full functionality including authentication, you need the Planthor Identity Server running.
+1. Navigate to `infrastructure/`
+2. Follow the instructions in `infrastructure/README.md` to set up development certificates and start the containers using Docker Compose.
+
+## 🏗️ Project Structure
+
+- `src/lib/components/ui/`: Atomic UI primitives.
+- `src/lib/constants.ts`: Shared constants and configuration.
+- `src/lib/goals.ts`: Goal schemas and mock database logic.
+- `src/routes/`: Application pages and API endpoints.
+
+## 🧪 Testing
 
 ```bash
-npm run build
+npm run test        # Run unit tests
+npm run coverage    # View test coverage
 ```
 
-You can preview the production build with `npm run preview`.
+## 🚢 Deployment
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-
-## Work with Identity Server
-
-- For run with docker-compose
-- Generate self-certificates from ./infrastructure/certificates.
-- Use Docker compose file in ./infrastructure folder.
-- For seeding data base need to `exec` to Identity container execute 
-
-```bash
-dotnet Planthor.IdentityServerAspNetIdentity.dll /seed  
-```
+The project supports multiple deployment targets via SvelteKit adapters:
+- **Vercel**: `npm run build`
+- **Node.js**: `npm run build:node`
+- **Netlify**: `npm run build:netlify`
